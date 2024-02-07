@@ -10,7 +10,7 @@ import Loader from './components/Loader'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ampeDent',
+  title: 'AmpeDent',
   description: 'Dented',
 }
 

@@ -1,17 +1,58 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 
 function Booking() {
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(true)
+
+  const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
+  const isValidPhone = (phone: string) =>
+    /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/.test(phone)
+  const isValidName = (name: string) => name.length >= 3
+  const isValidMessage = (message: string) => message.length >= 10
+
+  useEffect(() => {
+    const isEmpty = [firstName, lastName, email, phone, message].some(
+      x => x === '',
+    )
+    setIsDisabled(
+      isEmpty ||
+        !isValidName(firstName) ||
+        !isValidName(lastName) ||
+        !isValidEmail(email) ||
+        !isValidPhone(phone) ||
+        !isValidMessage(message),
+    )
+  }, [firstName, lastName, email, phone, message])
 
   function handleAppointment(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-
-    const body = { name, email, phone, message }
+    try {
+      setIsLoading(true)
+      const body = { firstName, lastName, email, phone, message }
+      fetch('/api/booking', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(() => {
+        setFirstName('')
+        setLastName('')
+        setEmail('')
+        setPhone('')
+        setMessage('')
+        setIsLoading(false)
+      })
+    } catch (error) {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -29,23 +70,46 @@ function Booking() {
           </p>
         </div>
         <form className=' mx-auto' onSubmit={handleAppointment}>
-          <div className=' flex flex-col my-4'>
-            <label htmlFor='name'>
-              Name {!name && <span className='text-red-600'>*</span>}
-            </label>
-            <input
-              type='text'
-              id='name'
-              autoFocus
-              value={name}
-              onChange={e => setName(e.target.value)}
-            />
+          <div className='grid md:grid-cols-2 gap-4 items-center'>
+            <div>
+              <label htmlFor='name'>
+                First name
+                {!isValidName(firstName) && (
+                  <span className='text-red-600 ml-1'>*</span>
+                )}
+              </label>
+              <input
+                disabled={isLoading}
+                type='text'
+                id='name'
+                autoFocus
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor='name'>
+                Last name
+                {!isValidName(lastName) && (
+                  <span className='text-red-600 ml-1'>*</span>
+                )}
+              </label>
+              <input
+                disabled={isLoading}
+                type='text'
+                id='name'
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
+              />
+            </div>
           </div>
           <div className=' flex flex-col my-4'>
             <label htmlFor='email'>
-              Email {!email && <span className='text-red-600'>*</span>}
+              Email
+              {!isValidEmail(email) && <span className='text-red-600'>*</span>}
             </label>
             <input
+              disabled={isLoading}
               type='email'
               id='email'
               value={email}
@@ -54,9 +118,11 @@ function Booking() {
           </div>
           <div className=' flex flex-col my-4'>
             <label htmlFor='phone'>
-              Phone {!phone && <span className='text-red-600'>*</span>}
+              Phone
+              {!isValidPhone(phone) && <span className='text-red-600'>*</span>}
             </label>
             <input
+              disabled={isLoading}
               type='text'
               id='phone'
               value={phone}
@@ -65,9 +131,13 @@ function Booking() {
           </div>
           <div className=' flex flex-col my-4'>
             <label htmlFor='message'>
-              Message {!message && <span className='text-red-600'>*</span>}
+              Message
+              {!isValidMessage(message) && (
+                <span className='text-red-600'>*</span>
+              )}
             </label>
             <textarea
+              disabled={isLoading}
               value={message}
               onChange={e => setMessage(e.target.value)}
               name='message'
@@ -78,8 +148,9 @@ function Booking() {
           </div>
           <button
             type='submit'
-            className=' rounded px-6 py-3 text-center font-semibold text-blue-400 border border-solid border-blue-400 hover:bg-blue-400 hover:text-white'>
-            Submit
+            className=' rounded px-6 py-3 text-center font-semibold text-white bg-blue-600  hover:bg-blue-800'
+            disabled={isDisabled || isLoading}>
+            {isLoading ? 'Submitting' : 'Submit'}
           </button>
         </form>
       </div>

@@ -3,6 +3,7 @@ import HeroContainer from '../components/HeroContainer'
 
 import services from '@/public/services.webp'
 import BookVisit from '../components/BookVisit'
+import ServicesAbout from '../components/ServicesAbout'
 
 function Services() {
   return (
@@ -22,6 +23,7 @@ function Services() {
           </div>
         </div>
       </HeroContainer>
+      <ServicesAbout />
 
       <section
         className='mx-auto w-full max-w-[1400px] md:py-20 lg:py-26 mt-8 px-4 md:px-0'

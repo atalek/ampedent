@@ -373,8 +373,8 @@ function Comfort() {
           r='1'
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(109 16) rotate(86.5167) scale(230.426)'>
-          <stop offset='0.576389' stop-color='#FFBB0C' />
-          <stop offset='1' stop-color='#FFC907' />
+          <stop offset='0.576389' stopColor='#FFBB0C' />
+          <stop offset='1' stopColor='#FFC907' />
         </radialGradient>
         <linearGradient
           id='paint1_linear_397_2913'
@@ -383,8 +383,8 @@ function Comfort() {
           x2='123.5'
           y2='173'
           gradientUnits='userSpaceOnUse'>
-          <stop stop-color='#201721' />
-          <stop offset='1' stop-color='#2B1F2C' />
+          <stop stopColor='#201721' />
+          <stop offset='1' stopColor='#2B1F2C' />
         </linearGradient>
         <clipPath id='clip0_397_2913'>
           <rect width='246' height='246' fill='white' />

@@ -66,7 +66,8 @@ input[type='number'] {
 input[type='email']:disabled,
 input[type='password']:disabled,
 input[type='tel']:disabled,
-input[type='text']:disabled {
+input[type='text']:disabled,
+textarea:disabled {
   @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
 label {
@@ -75,6 +76,11 @@ label {
 label + input,
 textarea {
   margin-top: 2px;
+}
+
+button[type='submit']:disabled,
+.submit:disabled {
+  @apply cursor-not-allowed  bg-blue-400;
 }
 
 .hamburger-top,
