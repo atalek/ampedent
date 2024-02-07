@@ -17,7 +17,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/hero.webp');
+  background: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/about.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,6 +48,33 @@
   height: 24px;
   transition: all 0.25s;
   position: relative;
+}
+
+li {
+  @apply list-disc;
+}
+
+textarea,
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+input[type='text'],
+input[type='number'] {
+  @apply block w-full mb-1 rounded-md;
+  @apply border p-2 border-gray-200;
+}
+input[type='email']:disabled,
+input[type='password']:disabled,
+input[type='tel']:disabled,
+input[type='text']:disabled {
+  @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
+}
+label {
+  @apply text-gray-800 text-sm leading-tight;
+}
+label + input,
+textarea {
+  margin-top: 2px;
 }
 
 .hamburger-top,
@@ -99,8 +142,4 @@
 
 .animate-link:nth-child(3) {
   animation-delay: 0.3s;
-}
-
-.animate-link:nth-child(4) {
-  animation-delay: 0.4s;
 }

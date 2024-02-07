@@ -35,8 +35,8 @@ function Testemonials() {
               />
             </div>
             <p className='text-[#647084]'>
-              “Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
-              luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+              Dr. Lee transformed my smile! I'm no longer afraid to show my
+              teeth. Best dentist ever!
             </p>
             <div className='flex'>
               <img
@@ -45,8 +45,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16'
               />
               <div className='flex flex-col'>
-                <h6 className='font-bold'>Laila Bahar</h6>
-                <p className='text-sm text-[#636262]'>Designer</p>
+                <h5 className='font-bold'>Sarah L.</h5>
               </div>
             </div>
           </li>
@@ -79,8 +78,8 @@ function Testemonials() {
               />
             </div>
             <p className='text-[#647084]'>
-              “Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
-              luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+              Dr. Green made my child's first dental visit a breeze. Highly
+              recommend for pediatric care!
             </p>
             <div className='flex'>
               <img
@@ -89,8 +88,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16'
               />
               <div className='flex flex-col'>
-                <h6 className='font-bold'>Laila Bahar</h6>
-                <p className='text-sm text-[#636262]'>Designer</p>
+                <h5 className='font-bold'>John D.</h5>
               </div>
             </div>
           </li>
@@ -123,8 +121,7 @@ function Testemonials() {
               />
             </div>
             <p className='text-[#647084]'>
-              “Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
-              luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+              Emergency root canal was painless. Dr. White is a lifesaver!
             </p>
             <div className='flex'>
               <img
@@ -133,15 +130,11 @@ function Testemonials() {
                 className='mr-4 h-16 w-16'
               />
               <div className='flex flex-col'>
-                <h6 className='text-base font-bold'>Laila Bahar</h6>
-                <p className='text-sm text-[#636262]'>Designer</p>
+                <h5 className='text-base font-bold'>Laila B.</h5>
               </div>
             </div>
           </li>
         </ul>
-        <a href='#' className='flex justify-center font-bold text-black'>
-          Check all reviews
-        </a>
       </div>
     </section>
   )

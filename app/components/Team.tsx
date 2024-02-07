@@ -3,6 +3,7 @@ import doc1 from '@/public/doc1.webp'
 import doc2 from '@/public/doc2.webp'
 import doc3 from '@/public/doc3.webp'
 import doc4 from '@/public/doc4.webp'
+import Link from 'next/link'
 
 function Team() {
   return (
@@ -15,7 +16,9 @@ function Team() {
           Meet the skilled hands & kind hearts behind your healthy smile
         </p>
         <ul className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-          <li className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
+          <Link
+            href='/about/#ourTeam'
+            className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               height={208}
               width={208}
@@ -28,8 +31,10 @@ function Team() {
               Master of Smiles <br />
               (Dentist)
             </p>
-          </li>
-          <li className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
+          </Link>
+          <Link
+            href='/about/#ourTeam'
+            className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc2}
               height={208}
@@ -42,8 +47,10 @@ function Team() {
               Gentle Touch <br />
               (Pediatric Dentist)
             </p>
-          </li>
-          <li className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
+          </Link>
+          <Link
+            href='/about/#ourTeam'
+            className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc4}
               height={208}
@@ -56,8 +63,10 @@ function Team() {
               Precision Artist <br />
               (Cosmetic Dentist)
             </p>
-          </li>
-          <li className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
+          </Link>
+          <Link
+            href='/about/#ourTeam'
+            className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc3}
               height={208}
@@ -70,7 +79,7 @@ function Team() {
               Restoration Expert <br />
               (Endodontist)
             </p>
-          </li>
+          </Link>
         </ul>
       </div>
     </section>

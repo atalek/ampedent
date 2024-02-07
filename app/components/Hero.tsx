@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import HeroContainer from './HeroContainer'
+import hero from '@/public/hero.webp'
 
 function Hero() {
   return (
-    <section className='hero-container'>
+    <HeroContainer backgroundImage={hero.src}>
       <div className='mx-auto  w-full max-w-3xl text-center mt-32'>
         <span className='sm:text-lg mb-'>Let us help you</span>
         <h1 className='mb-4 text-5xl font-bold md:text-7xl text-center'>
@@ -22,7 +24,7 @@ function Hero() {
           </Link>
         </div>
       </div>
-    </section>
+    </HeroContainer>
   )
 }
 export default Hero

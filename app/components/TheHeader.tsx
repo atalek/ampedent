@@ -44,7 +44,7 @@ function TheHeader() {
           href='/'
           className=' flex gap-2 items-center text-xl font-bold md:text-3xl text-blue-600  hover:text-blue-800'>
           <Image src={logo} height={96} width={96} alt='ampeDent logo' />
-          ampeDent
+          AmpeDent
         </Link>
         <nav className='hidden md:flex gap-6 items-center text-lg'>
           <Link
@@ -67,26 +67,13 @@ function TheHeader() {
           </Link>
           <Link
             href='/booking'
-            className={
-              pathName === '/booking'
-                ? 'text-blue-600 font-bold'
-                : '' +
-                  'p-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-800 '
-            }>
+            className='p-2 rounded-full bg-blue-600 text-white hover:bg-blue-800 '>
             Book now
-          </Link>
-          <Link
-            href='/login '
-            className={
-              pathName === '/login'
-                ? 'text-blue-600 font-bold'
-                : '' + 'hover:text-blue-600'
-            }>
-            Log in
           </Link>
         </nav>
         <div className='flex md:hidden gap-8 items-center'>
           <button
+            aria-label='expand mobile menu button'
             className={`hamburger ${isOpen ? 'open' : ''} focus:outline-none `}
             onClick={() => setIsOpen(prev => !prev)}>
             <span className='hamburger-top'></span>
@@ -113,11 +100,6 @@ function TheHeader() {
             href={'/booking'}
             className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
             Book now
-          </Link>
-          <Link
-            href={'/login'}
-            className='border rounded p-2 border-blue-400 animate-link'>
-            Log in
           </Link>
         </div>
       )}
