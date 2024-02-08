@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 function Team() {
   return (
-    <section className=''>
+    <section>
       <div className='mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32'>
         <h2 className='text-center text-3xl font-bold md:text-5xl'>
           Our Team Members

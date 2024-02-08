@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
 function CreateUser() {
@@ -7,18 +8,22 @@ function CreateUser() {
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const router = useRouter()
 
-  function handleLogin(e: FormEvent<HTMLFormElement>) {
+  async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
       if (!username || !password) return
       setIsLoading(true)
       const body = { username, password }
-      fetch('/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
       })
+      if (res.ok) {
+        router.push('/admin/users')
+      }
       setIsLoading(false)
     } catch (err: any) {
       setIsLoading(false)

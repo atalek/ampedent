@@ -9,6 +9,8 @@ function UserList() {
   const [users, setUsers] = useState<UserType[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [refreshKey, setRefreshKey] = useState(0)
+  const triggerRefresh = () => setRefreshKey(refreshKey + 1)
 
   useEffect(() => {
     async function fetchUsers() {
@@ -28,13 +30,13 @@ function UserList() {
       }
     }
     fetchUsers()
-  }, [])
+  }, [refreshKey])
 
   async function handleDeleteClick(_id: string) {
     try {
       const res = await fetch(`/api/auth?_id=${_id}`, { method: 'DELETE' })
       if (res.ok) {
-        console.log(res)
+        triggerRefresh()
       }
     } catch (error: any) {
       setError(error.message)
@@ -93,7 +95,7 @@ function UserList() {
                   <td className='p-4 align-middle '>{user.username}</td>
                   <td className='p-4 align-middle '>{user.role}</td>
                   <td className='p-4 align-middle  flex justify-end gap-2'>
-                    <EditUserModal user={user} />
+                    <EditUserModal user={user} onUserUpdate={triggerRefresh} />
                     <DeleteButton
                       label='Delete'
                       onDelete={() => handleDeleteClick(user._id)}

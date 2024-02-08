@@ -50,7 +50,7 @@ function Yep() {
           </div>
         </div>
         <Link
-          href='/about'
+          href='/about#mission'
           className='mx-auto mt-16 inline-block rounded-md bg-blue-600 hover:bg-blue-400 px-8 py-4 text-center font-semibold text-white'>
           Learn More
         </Link>

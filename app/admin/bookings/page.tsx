@@ -1,6 +1,38 @@
+'use client'
+
+import { BookingType } from '@/models/Booking'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+import {
+  formatDate,
+  formatTime,
+  incrementTimeByOneHour,
+} from '@/lib/dateAndTimeUtils'
 
 function Bookings() {
+  const [bookings, setBookings] = useState<BookingType[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    async function fetchUsers() {
+      try {
+        setIsLoading(true)
+        const res = await fetch('/api/booking')
+        if (res.ok) {
+          const data = await res.json()
+          setBookings(data.bookings)
+          setIsLoading(false)
+        }
+      } catch (err: any) {
+        setIsLoading(false)
+        setError(err.message)
+      }
+    }
+    fetchUsers()
+  }, [])
+
   return (
     <section className='grid gap-4'>
       <div className='relative'>
@@ -24,57 +56,63 @@ function Bookings() {
           type='search'
         />
       </div>
+      {error && <p className='text-red-600 text-center'>{error}</p>}
       <div className='relative w-full overflow-auto'>
         <table className='w-full caption-bottom text-sm'>
-          <thead className='[&amp;_tr]:border-b'>
-            <tr className='border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 w-[100px]'>
-                Booking
+          <thead>
+            <tr className='border-b transition-colors hover:bg-muted/50 '>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground w-[100px]'>
+                Booking ID
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0'>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                 Name
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0'>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                 Email
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0'>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                 Phone
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0'>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                 Status
               </th>
-              <th className='h-12 px-4 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 text-right'>
+              <th className='h-12 px-4 align-middle font-medium text-muted-foreground text-right'>
                 Scheduled
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0'>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className='[&amp;_tr:last-child]:border-0'>
-            <tr className='border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 font-medium'>
-                BK001
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0'>
-                John Doe
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0'>
-                john@example.com
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0'>
-                123-456-7890
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0'>
-                Confirmed
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right'>
-                10:00-11:00 AM - 10th Feb, 2024
-              </td>
-              <td className='p-4 align-middle [&amp;:has([role=checkbox])]:pr-0'>
-                <button className='btn'>Show details</button>
-              </td>
-            </tr>
+          <tbody>
+            {bookings.length > 0 &&
+              bookings.map(booking => (
+                <tr
+                  className='border-b transition-colors hover:bg-muted/50 '
+                  key={booking._id.toString()}>
+                  <td className='p-4 align-middle font-medium'>
+                    {booking._id.toString()}
+                  </td>
+                  <td className='p-4 align-middle capitalize'>
+                    {booking.firstName} {booking.lastName}
+                  </td>
+                  <td className='p-4 align-middle '>{booking.email}</td>
+                  <td className='p-4 align-middle'>{booking.phone}</td>
+                  <td className='p-4 align-middle '>{booking.status}</td>
+                  <td className='p-4 align-middle text-right'>
+                    {formatTime(booking.time)} -{' '}
+                    {incrementTimeByOneHour(booking.time)} ,{' '}
+                    {formatDate(booking.date.toString())}
+                  </td>
+                  <td className='p-4 align-middle'>
+                    <button className='btn '>
+                      <Link href={`/admin/bookings/${booking._id.toString()}`}>
+                        Show details
+                      </Link>
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

@@ -6,6 +6,7 @@ export async function POST(req: Request) {
   const { username, password } = body
   try {
     await dbConnect()
+
     const user = await User.findOne({ username })
 
     if (user && (await user.matchPassword(password))) {

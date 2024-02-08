@@ -1,18 +1,21 @@
 import mongoose from 'mongoose'
 
-type Booking = mongoose.Document & {
+export type BookingType = {
+  _id: mongoose.ObjectId | string
   firstName: string
   lastName: string
   email: string
   phone: string
   message: string
   status: 'pending' | 'completed' | 'canceled'
-  scheduledTime: Date
+  date: Date
+  time: string
 }
+type BookingDoc = mongoose.Document & BookingType
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const BookingSchema = new mongoose.Schema<Booking>(
+const BookingSchema = new mongoose.Schema<BookingDoc>(
   {
     firstName: {
       type: String,
@@ -55,12 +58,17 @@ const BookingSchema = new mongoose.Schema<Booking>(
       enum: ['pending', 'completed', 'uncompleted'],
       default: 'pending',
     },
-    scheduledTime: {
+    date: {
       type: Date,
+      required: true,
+    },
+    time: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true },
 )
 
 export default mongoose.models.Booking ||
-  mongoose.model<Booking>('Booking', BookingSchema)
+  mongoose.model<BookingDoc>('Booking', BookingSchema)

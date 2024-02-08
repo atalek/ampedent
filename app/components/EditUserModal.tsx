@@ -3,7 +3,13 @@
 import { UserType } from '@/models/User'
 import { FormEvent, useState } from 'react'
 
-function EditUserModal({ user }: { user: UserType }) {
+function EditUserModal({
+  user,
+  onUserUpdate,
+}: {
+  user: UserType
+  onUserUpdate: () => void
+}) {
   const [showUser, setShowUser] = useState(false)
   const [username, setUsername] = useState(user.username || '')
   const [password, setPassword] = useState('')
@@ -19,6 +25,7 @@ function EditUserModal({ user }: { user: UserType }) {
         headers: { 'Content-Type': 'application/json' },
       })
       if (res.ok) {
+        onUserUpdate()
         setShowUser(false)
       }
     } catch (error: any) {

@@ -79,7 +79,9 @@ function TheHeader() {
             }>
             Admin
           </Link>
-          <Link href='#' className='text-blue-600  hover:text-blue-800'>
+          <Link
+            href='#'
+            className='p-2 text-blue-600 border border-blue-600 rounded  hover:text-blue-800 hover:border-blue-800'>
             Sign Out
           </Link>
         </nav>
@@ -116,7 +118,7 @@ function TheHeader() {
           <Link
             href={'/admin/bookings'}
             className='border rounded p-2 border-blue-400 animate-link'>
-            Services
+            Admin
           </Link>
           <button className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
             Sign Out

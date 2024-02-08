@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function OurMission() {
   return (
-    <section className='my-16'>
+    <section className='my-16' id='mission'>
       <div className='mx-auto w-full max-w-[1400px] px-5 py-16 md:px-10 md:py-12 lg:py-16'>
         <h2 className='mb-8 text-3xl font-bold md:text-5xl lg:mb-14'>
           Meet AmpeDent: Where Smiles Shine Brighter

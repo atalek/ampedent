@@ -40,7 +40,7 @@ function Comfort() {
           />
         </g>
         <g filter='url(#filter5_diiii_397_2913)'>
-          <mask id='path-6-inside-1_397_2913' fill='white'>
+          <mask id='path-6Inside-1_397_2913' fill='white'>
             <path d='M179.462 112.5C184.178 112.5 188.065 116.344 187.359 121.006C186.599 126.026 185.168 130.947 183.09 135.652C179.849 142.993 175.098 149.662 169.108 155.28C163.119 160.898 156.009 165.354 148.183 168.395C140.358 171.435 131.97 173 123.5 173C115.03 173 106.642 171.435 98.8169 168.395C90.9914 165.354 83.881 160.898 77.8916 155.28C71.9022 149.662 67.1512 142.993 63.9098 135.652C61.832 130.947 60.4006 126.026 59.6406 121.006C58.9348 116.344 62.8225 112.5 67.5377 112.5C72.253 112.5 75.9891 116.361 76.9448 120.978C77.5493 123.899 78.4659 126.762 79.6854 129.523C82.0687 134.92 85.562 139.824 89.9658 143.955C94.3695 148.085 99.5976 151.362 105.351 153.597C111.105 155.833 117.272 156.983 123.5 156.983C129.728 156.983 135.895 155.833 141.649 153.597C147.402 151.362 152.63 148.085 157.034 143.955C161.438 139.824 164.931 134.92 167.315 129.523C168.534 126.762 169.451 123.899 170.055 120.978C171.011 116.361 174.747 112.5 179.462 112.5Z' />
           </mask>
           <path
@@ -48,7 +48,7 @@ function Comfort() {
             stroke='url(#paint1_linear_397_2913)'
             strokeWidth='22'
             strokeLinejoin='round'
-            mask='url(#path-6-inside-1_397_2913)'
+            mask='url(#path-6Inside-1_397_2913)'
           />
         </g>
       </g>
@@ -60,7 +60,7 @@ function Comfort() {
           width='278'
           height='326'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -136,7 +136,7 @@ function Comfort() {
           width='149'
           height='149'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -156,7 +156,7 @@ function Comfort() {
           width='149'
           height='149'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -176,7 +176,7 @@ function Comfort() {
           width='67.5018'
           height='34.5'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -216,7 +216,7 @@ function Comfort() {
           width='67.5018'
           height='34.5'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -256,7 +256,7 @@ function Comfort() {
           width='194.552'
           height='127.167'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'>
+          colorInterpolation-filters='sRGB'>
           <feFlood flood-opacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'

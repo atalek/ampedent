@@ -59,7 +59,8 @@ input[type='email'],
 input[type='password'],
 input[type='tel'],
 input[type='text'],
-input[type='number'] {
+input[type='number'],
+select {
   @apply block w-full mb-1 rounded-md;
   @apply border p-2 border-gray-200;
 }
@@ -67,6 +68,7 @@ input[type='email']:disabled,
 input[type='password']:disabled,
 input[type='tel']:disabled,
 input[type='text']:disabled,
+select:disabled,
 textarea:disabled {
   @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
@@ -97,8 +99,8 @@ button[type='submit']:disabled,
 }
 
 .btn {
-  @apply flex justify-center gap-2 text-gray-600 font-semibold;
-  @apply border border-gray-300 rounded px-6 py-2 hover:text-gray-900;
+  @apply flex justify-center gap-2 text-gray-800 font-semibold;
+  @apply border border-gray-300 rounded px-6 py-2 hover:text-black hover:border-black;
 }
 
 .hamburger-middle {

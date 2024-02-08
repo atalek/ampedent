@@ -2,9 +2,9 @@ import dbConnect from '@/lib/dbConnect'
 import User from '@/models/User'
 
 export async function POST(req: Request) {
-  const body = await req.json()
-  const { username, password } = body
   try {
+    const body = await req.json()
+    const { username, password } = body
     await dbConnect()
 
     const user = await User.create({ username, password })
