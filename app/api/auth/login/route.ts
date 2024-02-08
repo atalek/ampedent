@@ -14,6 +14,10 @@ export async function POST(req: Request) {
         username: user.username,
         role: user.role,
       })
+    } else {
+      return Response.json({
+        message: 'Invalid username or password',
+      })
     }
   } catch (error: any) {
     throw new Error(error.message)

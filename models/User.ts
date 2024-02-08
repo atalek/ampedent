@@ -7,6 +7,7 @@ enum Role {
 }
 
 export type UserType = mongoose.Document & {
+  _id: mongoose.ObjectId | string
   username: string
   password: string
   role: Role
@@ -20,6 +21,7 @@ const UserSchema = new mongoose.Schema<UserDoc>(
   {
     username: {
       type: String,
+      unique: true,
       lowercase: true,
       required: true,
     },

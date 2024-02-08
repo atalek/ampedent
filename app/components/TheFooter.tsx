@@ -54,6 +54,11 @@ function TheFooter() {
               className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
               Booking
             </Link>
+            <Link
+              href='/admin/bookings'
+              className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
+              Admin
+            </Link>
           </div>
           <div className='max-[991px]:flex-none '>
             <Link

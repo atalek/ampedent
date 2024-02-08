@@ -29,27 +29,33 @@ export async function GET(req: Request) {
 export async function PUT(req: Request) {
   try {
     const body = await req.json()
-    const { username, password, role } = body
+    const { _id, username, password } = body
     await dbConnect()
-    const user = await User.findOne({ username })
+    const user = await User.findById({ _id })
 
     if (!user) {
-      return Response.json({ error: 'User not found' })
+      throw new Error('User not found')
     }
     const updateFields: Partial<UserType> = {}
     if (username) updateFields.username = username
-    if (password) updateFields.password = password
-    if (role) updateFields.role = role
+    if (password && password !== '') updateFields.password = password
 
-    const updatedUser = await User.findOneAndUpdate(
-      { username },
-      updateFields,
-      {
-        new: true,
-      },
-    )
+    const updatedUser = await User.findByIdAndUpdate({ _id }, updateFields, {
+      new: true,
+    })
     return Response.json({ message: 'User updated' })
   } catch (error: any) {
     throw new Error(error.message)
+  }
+}
+
+export async function DELETE(req: Request) {
+  try {
+    const url = new URL(req.url)
+    const _id = url.searchParams.get('_id')
+    await User.findByIdAndDelete(_id)
+    return Response.json({ message: 'User deleted' })
+  } catch (error) {
+    throw error
   }
 }

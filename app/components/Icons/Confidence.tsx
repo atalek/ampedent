@@ -25,8 +25,8 @@ function Confidence() {
           cy='32'
           r='30'
           stroke='#FCC24C'
-          stroke-linecap='round'
-          stroke-width='2'
+          strokeLinecap='round'
+          strokeWidth='2'
         />
       </g>
     </svg>

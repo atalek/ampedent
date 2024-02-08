@@ -85,7 +85,7 @@ function Services() {
             </ul>
           </div>
           <div className='bg-sky-50 p-8 md:col-span-2 border border-solid border-black rounded'>
-            <h2 className='text-3xl font-bold'>Preventive & General</h2>
+            <h2 className='text-3xl font-bold'>Full-Mouth Transformation</h2>
             <hr className='w-40 my-8 border-2 border-black' />
             <p className='mt-8'>
               Tooth loss is extremely prevalent in the United States. 20% of

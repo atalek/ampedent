@@ -70,6 +70,18 @@ function TheHeader() {
             className='p-2 rounded-full bg-blue-600 text-white hover:bg-blue-800 '>
             Book now
           </Link>
+          <Link
+            href='/admin/bookings'
+            className={
+              pathName.startsWith('/admin')
+                ? 'text-blue-600 font-bold'
+                : '' + 'hover:text-blue-600'
+            }>
+            Admin
+          </Link>
+          <Link href='#' className='text-blue-600  hover:text-blue-800'>
+            Sign Out
+          </Link>
         </nav>
         <div className='flex md:hidden gap-8 items-center'>
           <button
@@ -101,6 +113,14 @@ function TheHeader() {
             className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
             Book now
           </Link>
+          <Link
+            href={'/admin/bookings'}
+            className='border rounded p-2 border-blue-400 animate-link'>
+            Services
+          </Link>
+          <button className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
+            Sign Out
+          </button>
         </div>
       )}
       <div className='fixed bottom-0 -right-6 p-10 z-[10]'>

@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 
-function Protected() {
+function CreateUser() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -14,7 +14,7 @@ function Protected() {
       if (!username || !password) return
       setIsLoading(true)
       const body = { username, password }
-      fetch('/api/auth/login', {
+      fetch('/api/auth/register', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
@@ -28,15 +28,16 @@ function Protected() {
   }
   return (
     <section>
-      <div className=' py-16 md:py-24 lg:py-32'>
+      <div className=' py-16 md:py-24 lg:py-32 p-4'>
         <form
           className='mx-auto mb-4 max-w-md w-full pb-4'
           onSubmit={handleLogin}>
-          <h1 className='text-center text-3xl my-8'>Login to AmpeDent</h1>
+          <h1 className='text-center text-3xl my-8'>
+            Create a new AmpeDent user
+          </h1>
           <div className='relative'>
             <input
               disabled={isLoading}
-              autoFocus
               value={username}
               onChange={e => setUsername(e.target.value)}
               type='text'
@@ -62,11 +63,12 @@ function Protected() {
             disabled={isLoading}
             type='submit'
             className=' rounded px-6 py-3 text-center font-semibold text-white bg-blue-600  hover:bg-blue-800'>
-            Login
+            Create user
           </button>
         </form>
       </div>
     </section>
   )
 }
-export default Protected
+
+export default CreateUser

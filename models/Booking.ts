@@ -6,6 +6,8 @@ type Booking = mongoose.Document & {
   email: string
   phone: string
   message: string
+  status: 'pending' | 'completed' | 'canceled'
+  scheduledTime: Date
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -47,6 +49,14 @@ const BookingSchema = new mongoose.Schema<Booking>(
       required: true,
       trim: true,
       maxlength: [255, 'Message cannot be more than 255 characters'],
+    },
+    status: {
+      type: String,
+      enum: ['pending', 'completed', 'uncompleted'],
+      default: 'pending',
+    },
+    scheduledTime: {
+      type: Date,
     },
   },
   { timestamps: true },
