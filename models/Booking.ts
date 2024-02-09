@@ -49,7 +49,6 @@ const BookingSchema = new mongoose.Schema<BookingDoc>(
     },
     message: {
       type: String,
-      required: true,
       trim: true,
       maxlength: [255, 'Message cannot be more than 255 characters'],
     },

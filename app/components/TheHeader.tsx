@@ -6,6 +6,7 @@ import logo from '@/public/ampedent.webp'
 import { useEffect, useState } from 'react'
 import UpArrow from './Icons/UpArrow'
 import { usePathname } from 'next/navigation'
+import { signOut, useSession } from 'next-auth/react'
 
 function TheHeader() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +20,7 @@ function TheHeader() {
       behavior: 'smooth',
     })
   }
+  const { status } = useSession()
 
   useEffect(() => {
     const updateScroll = () => {
@@ -70,20 +72,24 @@ function TheHeader() {
             className='p-2 rounded-full bg-blue-600 text-white hover:bg-blue-800 '>
             Book now
           </Link>
-          <Link
-            href='/admin/bookings'
-            className={
-              pathName.startsWith('/admin')
-                ? 'text-blue-600 font-bold'
-                : '' + 'hover:text-blue-600'
-            }>
-            Admin
-          </Link>
-          <Link
-            href='#'
-            className='p-2 text-blue-600 border border-blue-600 rounded  hover:text-blue-800 hover:border-blue-800'>
-            Sign Out
-          </Link>
+          {status === 'authenticated' && (
+            <>
+              <Link
+                href='/admin/bookings'
+                className={
+                  pathName.startsWith('/admin')
+                    ? 'text-blue-600 font-bold'
+                    : '' + 'hover:text-blue-600'
+                }>
+                Admin
+              </Link>
+              <button
+                onClick={() => signOut()}
+                className='p-2 text-blue-600 border border-blue-600 rounded  hover:text-blue-800 hover:border-blue-800'>
+                Sign Out
+              </button>
+            </>
+          )}
         </nav>
         <div className='flex md:hidden gap-8 items-center'>
           <button
@@ -115,14 +121,20 @@ function TheHeader() {
             className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
             Book now
           </Link>
-          <Link
-            href={'/admin/bookings'}
-            className='border rounded p-2 border-blue-400 animate-link'>
-            Admin
-          </Link>
-          <button className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
-            Sign Out
-          </button>
+          {status === 'authenticated' && (
+            <>
+              <Link
+                href={'/admin/bookings'}
+                className='border rounded p-2 border-blue-400 animate-link'>
+                Admin
+              </Link>
+              <button
+                className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'
+                onClick={() => signOut()}>
+                Sign Out
+              </button>
+            </>
+          )}
         </div>
       )}
       <div className='fixed bottom-0 -right-6 p-10 z-[10]'>

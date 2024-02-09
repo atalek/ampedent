@@ -1,22 +1,71 @@
+import { allTimes } from '@/data/times'
 import dbConnect from '@/lib/dbConnect'
 import Booking, { BookingType } from '@/models/Booking'
+import { isSuperAdmin } from '../auth/[...nextauth]/route'
+import { el } from 'date-fns/locale'
 
 export async function GET(req: Request) {
   try {
     await dbConnect()
-    const now = new Date()
-    let bookings: BookingType[] = await Booking.find({
-      date: { $gte: now },
-    })
+    const role = await isSuperAdmin()
+    if (role === 'superadmin' || role === 'admin') {
+      const url = new URL(req.url)
+      const _id = url.searchParams.get('_id')
 
-    bookings.sort((a, b) => {
-      const [aHours, aMinutes] = a.time.split(':').map(Number)
-      const [bHours, bMinutes] = b.time.split(':').map(Number)
+      if (_id) {
+        const booking = await Booking.findById(_id)
+        return Response.json({ message: 'Booking fetched', booking: booking })
+      }
 
-      return aHours - bHours || aMinutes - bMinutes
-    })
+      const status = url.searchParams.get('status')
+      const search = url.searchParams.get('search')
+      const page = Number(url.searchParams.get('page')) || 1
+      const pageSize = 9
 
-    return Response.json({ message: 'Bookings fetched ', bookings: bookings })
+      let filter: any = {}
+
+      if (status === 'all') {
+        filter = {
+          $or: [
+            { firstName: { $regex: `.*${search}.*`, $options: 'i' } },
+            { lastName: { $regex: `.*${search}.*`, $options: 'i' } },
+            { phone: { $regex: `.*${search}.*`, $options: 'i' } },
+            { email: { $regex: `.*${search}.*`, $options: 'i' } },
+          ],
+        }
+      } else {
+        filter = {
+          status,
+          $or: [
+            { firstName: { $regex: `.*${search}.*`, $options: 'i' } },
+            { lastName: { $regex: `.*${search}.*`, $options: 'i' } },
+            { phone: { $regex: `.*${search}.*`, $options: 'i' } },
+            { email: { $regex: `.*${search}.*`, $options: 'i' } },
+          ],
+        }
+      }
+
+      const totalBookings = await Booking.countDocuments(filter)
+      const totalPages = Math.ceil(totalBookings / pageSize)
+
+      let bookings: BookingType[] = []
+
+      if (totalPages >= page) {
+        bookings = await Booking.find(filter)
+          .limit(pageSize)
+          .skip(pageSize * (page - 1))
+          .sort({ status: -1, date: 1, time: 1 })
+          .exec()
+      }
+
+      return Response.json({
+        message: 'Bookings fetched',
+        bookings,
+        totalPages: totalPages,
+      })
+    } else {
+      throw new Error('Unauthorized')
+    }
   } catch (error) {
     throw new Error('Could not fetch bookings')
   }
@@ -39,5 +88,29 @@ export async function POST(req: Request) {
     return Response.json({ message: 'Booking created', booking: booking })
   } catch (error: any) {
     throw new Error(error.message)
+  }
+}
+
+export async function PUT(req: Request) {
+  try {
+    await dbConnect()
+    const url = new URL(req.url)
+    const _id = url.searchParams.get('_id')
+    const role = await isSuperAdmin()
+    if (role === 'superadmin' || role === 'admin') {
+      if (_id) {
+        const booking = await Booking.findByIdAndUpdate(
+          _id,
+          { status: 'completed' },
+          { new: true },
+        )
+        console.log(booking.status)
+        return Response.json({ message: 'Booking updated', booking: booking })
+      }
+    } else {
+      throw new Error('Unauthorized')
+    }
+  } catch (error) {
+    throw new Error('Could not update bookings')
   }
 }

@@ -11,15 +11,15 @@ function EditUserModal({
   onUserUpdate: () => void
 }) {
   const [showUser, setShowUser] = useState(false)
-  const [username, setUsername] = useState(user.username || '')
+  const [name, setName] = useState(user.name || '')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
   async function handleEdit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
-      const body = { _id: user._id, username, password }
-      const res = await fetch('/api/auth/', {
+      const body = { _id: user._id, name, password }
+      const res = await fetch('/api/users/', {
         method: 'PUT',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
@@ -49,16 +49,16 @@ function EditUserModal({
                     className='mx-auto mb-4 max-w-md w-full pb-4'
                     onSubmit={handleEdit}>
                     <h1 className='text-center text-3xl my-8'>
-                      Edit {user.username}
+                      Edit {user.name}
                     </h1>
                     <div className='relative'>
                       <input
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
+                        value={name}
+                        onChange={e => setName(e.target.value)}
                         type='text'
                         className='my-4 '
                         name='name'
-                        placeholder='username'
+                        placeholder='name'
                         required
                       />
                     </div>

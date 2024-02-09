@@ -1,5 +1,5 @@
 {
-  "name": "dentism",
+  "name": "ampedent",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
     "next": "14.1.0",
+    "next-auth": "^4.24.5",
     "next-nprogress-bar": "^2.1.2",
     "react": "^18",
     "react-calendar": "^4.8.0",

@@ -1,23 +1,43 @@
 'use client'
 
+import { signIn } from 'next-auth/react'
 import { FormEvent, useState } from 'react'
 
 function Admin() {
-  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  function handleLogin(e: FormEvent<HTMLFormElement>) {
+  // function handleLogin(e: FormEvent<HTMLFormElement>) {
+  //   e.preventDefault()
+  //   try {
+  //     if (!name || !password) return
+  //     setIsLoading(true)
+  //     const body = { name, password }
+  //     fetch('/api/auth/login', {
+  //       method: 'POST',
+  //       body: JSON.stringify(body),
+  //       headers: { 'Content-Type': 'application/json' },
+  //     })
+  //     setIsLoading(false)
+  //   } catch (err: any) {
+  //     setIsLoading(false)
+  //     setError(err.message)
+  //     console.log(err)
+  //   }
+  // }
+
+  async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    console.log('clicked?')
     try {
-      if (!username || !password) return
+      if (!name || !password) return
       setIsLoading(true)
-      const body = { username, password }
-      fetch('/api/auth/login', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: { 'Content-Type': 'application/json' },
+      await signIn('credentials', {
+        name,
+        password,
+        callbackUrl: '/admin/bookings',
       })
       setIsLoading(false)
     } catch (err: any) {
@@ -26,6 +46,7 @@ function Admin() {
       console.log(err)
     }
   }
+
   return (
     <section>
       <div className=' py-16 md:py-24 lg:py-32'>
@@ -37,11 +58,12 @@ function Admin() {
             <input
               disabled={isLoading}
               autoFocus
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              value={name}
+              onChange={e => setName(e.target.value)}
               type='text'
-              className='my-4 '
-              name='name'
+              className='my-4'
+              id='username'
+              name='username'
               placeholder='username'
               required
             />
@@ -52,6 +74,8 @@ function Admin() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               type='password'
+              id='password'
+              name='password'
               className='my-4 '
               placeholder='password'
               required

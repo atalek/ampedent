@@ -60,6 +60,7 @@ input[type='password'],
 input[type='tel'],
 input[type='text'],
 input[type='number'],
+input[type='search'],
 select {
   @apply block w-full mb-1 rounded-md;
   @apply border p-2 border-gray-200;

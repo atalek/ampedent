@@ -40,12 +40,12 @@ function Testemonials() {
             </p>
             <div className='flex'>
               <img
-                src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6358cb67bf1bca198e298c35_Ellipse%205-2.png'
+                src='https://cdn.frankerfacez.com/emoticon/303587/4'
                 alt=''
-                className='mr-4 h-16 w-16'
+                className='mr-4 h-16 w-16 rounded-full'
               />
               <div className='flex flex-col'>
-                <h5 className='font-bold'>Sarah L.</h5>
+                <h5 className='font-bold'>Alan Kaizer</h5>
               </div>
             </div>
           </li>
@@ -88,7 +88,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16'
               />
               <div className='flex flex-col'>
-                <h5 className='font-bold'>John D.</h5>
+                <h5 className='font-bold'>Woodland Joseph</h5>
               </div>
             </div>
           </li>
@@ -125,12 +125,12 @@ function Testemonials() {
             </p>
             <div className='flex'>
               <img
-                src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6358cb614a296368b383467c_Ellipse%205-3.png'
+                src='https://cdn.secta.ai/tmp/marko-headshot.jpeg'
                 alt=''
-                className='mr-4 h-16 w-16'
+                className='mr-4 h-16 w-16 rounded-full'
               />
               <div className='flex flex-col'>
-                <h5 className='text-base font-bold'>Laila B.</h5>
+                <h5 className='text-base font-bold'>Sebastian Fors</h5>
               </div>
             </div>
           </li>

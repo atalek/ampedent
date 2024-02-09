@@ -3,26 +3,36 @@
 import { BookingType } from '@/models/Booking'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { useDebounce } from '@uidotdev/usehooks'
 
 import {
   formatDate,
   formatTime,
   incrementTimeByOneHour,
 } from '@/lib/dateAndTimeUtils'
+import Pagination from '@/app/components/Pagination'
 
 function Bookings() {
   const [bookings, setBookings] = useState<BookingType[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const [filter, setFilter] = useState('all')
+  const [search, setSearch] = useState('')
   const [error, setError] = useState('')
+  const [page, setPage] = useState(1)
+  const [pages, setPages] = useState<number>()
+  const debouncedSearchTerm = useDebounce(search, 400)
 
   useEffect(() => {
-    async function fetchUsers() {
+    async function fetchBookings() {
       try {
         setIsLoading(true)
-        const res = await fetch('/api/booking')
+        const res = await fetch(
+          `/api/booking?status=${filter}&page=${page}&search=${search}`,
+        )
         if (res.ok) {
           const data = await res.json()
           setBookings(data.bookings)
+          setPages(data.totalPages)
           setIsLoading(false)
         }
       } catch (err: any) {
@@ -30,34 +40,22 @@ function Bookings() {
         setError(err.message)
       }
     }
-    fetchUsers()
-  }, [])
+    fetchBookings()
+  }, [filter, debouncedSearchTerm, page])
 
   return (
     <section className='grid gap-4'>
       <div className='relative'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='2'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className='absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400'>
-          <circle cx='11' cy='11' r='8'></circle>
-          <path d='m21 21-4.3-4.3'></path>
-        </svg>
         <input
-          className='flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-8 w-full max-w-md'
-          placeholder='Search bookings...'
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          className='max-w-md items-center'
+          placeholder='Search for name or email'
           type='search'
         />
       </div>
       {error && <p className='text-red-600 text-center'>{error}</p>}
-      <div className='relative w-full overflow-auto'>
+      <div className='md:min-h-[700px] h-full relative w-full overflow-auto'>
         <table className='w-full caption-bottom text-sm'>
           <thead>
             <tr className='border-b transition-colors hover:bg-muted/50 '>
@@ -74,14 +72,24 @@ function Bookings() {
                 Phone
               </th>
               <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
-                Status
+                <div className='flex flex-row items-center gap-4'>
+                  Status
+                  <select
+                    name='status'
+                    id='status'
+                    onChange={e => setFilter(e.target.value)}
+                    className='bg-white max-w-[150px]'>
+                    <option value='all'>all</option>
+                    <option value='pending'>pending</option>
+                    <option value='completed'>completed</option>
+                    <option value='canceled'>canceled</option>
+                  </select>
+                </div>
               </th>
               <th className='h-12 px-4 align-middle font-medium text-muted-foreground text-right'>
                 Scheduled
               </th>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
-                Actions
-              </th>
+              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'></th>
             </tr>
           </thead>
           <tbody>
@@ -98,10 +106,19 @@ function Bookings() {
                   </td>
                   <td className='p-4 align-middle '>{booking.email}</td>
                   <td className='p-4 align-middle'>{booking.phone}</td>
-                  <td className='p-4 align-middle '>{booking.status}</td>
-                  <td className='p-4 align-middle text-right'>
-                    {formatTime(booking.time)} -{' '}
-                    {incrementTimeByOneHour(booking.time)} ,{' '}
+                  <td
+                    className={`p-4 align-middle font-bold ${
+                      booking.status === 'completed'
+                        ? 'text-green-600'
+                        : booking.status === 'canceled'
+                        ? 'text-red-600'
+                        : ''
+                    }`}>
+                    {booking.status}
+                  </td>
+                  <td className='p-4 align-middle md:text-right text-center'>
+                    {formatTime(booking.time.toString())} -{' '}
+                    {incrementTimeByOneHour(booking.time.toString())} ,{' '}
                     {formatDate(booking.date.toString())}
                   </td>
                   <td className='p-4 align-middle'>
@@ -116,6 +133,9 @@ function Bookings() {
           </tbody>
         </table>
       </div>
+      {bookings.length > 0 && pages && (
+        <Pagination page={page} setPage={setPage} pages={pages} />
+      )}
     </section>
   )
 }

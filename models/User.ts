@@ -6,20 +6,19 @@ enum Role {
   SUPERADMIN = 'superadmin',
 }
 
-export type UserType = mongoose.Document & {
+export type UserType = {
   _id: mongoose.ObjectId | string
-  username: string
+  name: string
   password: string
   role: Role
-}
-
-type UserDoc = UserType & {
   matchPassword(enteredPassword: string): Promise<boolean>
 }
 
+type UserDoc = UserType & mongoose.Document
+
 const UserSchema = new mongoose.Schema<UserDoc>(
   {
-    username: {
+    name: {
       type: String,
       unique: true,
       lowercase: true,

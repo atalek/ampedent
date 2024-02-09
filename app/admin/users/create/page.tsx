@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
 function CreateUser() {
-  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -13,10 +13,10 @@ function CreateUser() {
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
-      if (!username || !password) return
+      if (!name || !password) return
       setIsLoading(true)
-      const body = { username, password }
-      const res = await fetch('/api/auth/register', {
+      const body = { name, password }
+      const res = await fetch('/api/users/register', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
@@ -43,8 +43,8 @@ function CreateUser() {
           <div className='relative'>
             <input
               disabled={isLoading}
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              value={name}
+              onChange={e => setName(e.target.value)}
               type='text'
               className='my-4 '
               name='name'

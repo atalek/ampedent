@@ -1,3 +1,4 @@
+import { allTimes } from '@/data/times'
 import dbConnect from '@/lib/dbConnect'
 import Booking from '@/models/Booking'
 
@@ -12,6 +13,12 @@ export async function GET(req: Request) {
     } else {
       throw new Error('Invalid date')
     }
+
+    const dayOfWeek = selectedDate.getDay()
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      throw new Error('No available times on Saturday or Sunday')
+    }
+
     await dbConnect()
 
     const bookings = await Booking.find({
@@ -21,26 +28,30 @@ export async function GET(req: Request) {
       },
     })
 
-    const allTimes = [
-      '08:00:00.000Z',
-      '09:00:00.000Z',
-      '10:00:00.000Z',
-      '11:00:00.000Z',
-      '12:00:00.000Z',
-      '13:00:00.000Z',
-      '14:00:00.000Z',
-      '15:00:00.000Z',
-      '16:00:00.000Z',
-    ]
+    const bookedAndNotCanceledTimes = bookings
+      .filter(booking => booking.status !== 'canceled')
+      .map(booking => booking.time)
 
-    const bookedTimes = bookings.map(booking => booking.time)
-    const availableTimes = allTimes.filter(time => !bookedTimes.includes(time))
+    const utcTime = new Date().getTime()
+    const dstOffset = new Date(utcTime).getTimezoneOffset() / 60
+    const cetOffset = dstOffset < 60 ? 60 : 120
+    const currentCETTime = new Date(utcTime + cetOffset * 60 * 1000)
+
+    const availableTimes = allTimes.filter(time => {
+      const availableTime = new Date(
+        `${selectedDate?.toISOString().split('T')[0]}T${time}`,
+      )
+      return (
+        availableTime.getTime() > currentCETTime.getTime() &&
+        !bookedAndNotCanceledTimes.includes(time)
+      )
+    })
 
     return Response.json({
-      message: 'Bookings fetched ',
+      message: 'Available times fetched',
       availableTimes: availableTimes,
     })
   } catch (error) {
-    throw new Error('Could not fetch bookings')
+    throw new Error('Could not fetch available times: ' + error)
   }
 }

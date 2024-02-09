@@ -61,7 +61,7 @@ function Comfort() {
           height='326'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
             in='SourceGraphic'
@@ -137,7 +137,7 @@ function Comfort() {
           height='149'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
             in='SourceGraphic'
@@ -157,7 +157,7 @@ function Comfort() {
           height='149'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
             in='SourceGraphic'
@@ -177,7 +177,7 @@ function Comfort() {
           height='34.5'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
             in='SourceGraphic'
@@ -217,7 +217,7 @@ function Comfort() {
           height='34.5'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
             in='SourceGraphic'
@@ -257,7 +257,7 @@ function Comfort() {
           height='127.167'
           filterUnits='userSpaceOnUse'
           colorInterpolation-filters='sRGB'>
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
