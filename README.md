@@ -30,8 +30,6 @@ appointment booking system, and a secure admin panel.
 - **NextAuth**: A complete open source authentication solution for Next.js
   applications.
 
-
-	
 ![Admin panel](https://res.cloudinary.com/dkofkuquf/image/upload/v1707585171/nuxtshop/go7j387zbdkslzrayolk.png)
 
 ## Setup
@@ -60,7 +58,7 @@ appointment booking system, and a secure admin panel.
 4. **Configure environment variables.**
 
 - Create a `.env` file in the root of the project.
-- Add the necessary environment variables for Stripe and Cloudinary.
+- Add the necessary environment variables for MongoDB and NextAuth.
 
   ```env
   # MongoDB
@@ -74,7 +72,8 @@ appointment booking system, and a secure admin panel.
   NODE_ENV='development'
   ```
 
-5. **Create a superuser with the provided script.**
+5. **Create a superuser (modify the name and password to your liking) with the
+   provided script.**
 
    ```bash
    node createuser.js
