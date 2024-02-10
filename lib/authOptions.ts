@@ -19,7 +19,6 @@ const authOptions: NextAuthOptions = {
 
         await dbConnect()
         const user = await User.findOne({ name })
-        console.log(user && (await user.matchPassword(password)))
         if (user && (await user.matchPassword(password))) {
           return user
         }

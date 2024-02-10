@@ -53,22 +53,26 @@ function TheFooter() {
           <div className='font-semibold max-[991px]: max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center'>
             <Link
               href='/about'
+              aria-label='About us page link'
               className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
-              About
+              About Us
             </Link>
             <Link
               href='/services'
+              aria-label='Services page link'
               className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
               Services
             </Link>
             <Link
               href='booking'
+              aria-label='Create a booking page link'
               className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
               Booking
             </Link>
             {status === 'authenticated' && (
               <Link
                 href='/admin/bookings'
+                aria-label='Admin bookings dashboard page link'
                 className='inline-block font-normal text-slate-600 transition hover:text-blue-600 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6'>
                 Admin
               </Link>

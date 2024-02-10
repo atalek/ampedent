@@ -17,7 +17,8 @@ function Team() {
         </p>
         <div className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           <Link
-            href='/about/#ourteam'
+            href='/about/#daniel'
+            aria-label="Link to Dr. Daniel Lee's section on the about page"
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               height={208}
@@ -33,7 +34,8 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourteam'
+            href='/about/#sarah'
+            aria-label="Link to Dr.Sarah Green's section on the about page"
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc2}
@@ -49,7 +51,8 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourteam'
+            href='/about/#emily'
+            aria-label="Link to Dr.Emily Rose's section on the about page"
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc4}
@@ -65,7 +68,8 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourteam'
+            href='/about/#michael'
+            aria-label="Link to Dr.Michael White's section on the about page"
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc3}

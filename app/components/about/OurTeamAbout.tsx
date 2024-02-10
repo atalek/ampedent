@@ -7,9 +7,7 @@ import doc4 from '@/public/doc4.webp'
 
 function OurTeamAbout() {
   return (
-    <section
-      className='mx-auto w-full max-w-[1400px] px-5 py-16 md:px-10 md:py-24 lg:py-32'
-      id='ourteam'>
+    <section className='mx-auto w-full max-w-[1400px] px-5 py-16 md:px-10 md:py-24 lg:py-32'>
       <h2 className='text-center text-3xl font-bold md:text-5xl'>
         Our Team Members
       </h2>
@@ -18,7 +16,9 @@ function OurTeamAbout() {
       </p>
 
       <div className='grid md:grid-cols-2 grid- gap-6 items-stretch'>
-        <div className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '>
+        <div
+          className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '
+          id='daniel'>
           <Image
             src={doc1}
             alt='Picture of Dr. Daniel Lee '
@@ -39,7 +39,9 @@ function OurTeamAbout() {
             </p>
           </div>
         </div>
-        <div className='p-2 border border-solid border-black rounded grid md:grid-cols-2  gap-6 '>
+        <div
+          className='p-2 border border-solid border-black rounded grid md:grid-cols-2  gap-6 '
+          id='sarah'>
           <div className='order-2 sm:order-1 mt-4 md:mt-0 p-2'>
             <h3 className='font-bold text-lg'>Dr. Sarah Green</h3>
             <p className='text-sm text-slate-500'>(Pediatric Dentist)</p>
@@ -64,7 +66,9 @@ function OurTeamAbout() {
         </div>
       </div>
       <div className='grid md:grid-cols-2 gap-6 items-stretch mt-8'>
-        <div className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '>
+        <div
+          className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '
+          id='emily'>
           <Image
             src={doc4}
             alt='Picture of Dr. Emily Rose '
@@ -85,7 +89,9 @@ function OurTeamAbout() {
             </p>
           </div>
         </div>
-        <div className='p-2 border border-solid border-black rounded grid md:grid-cols-2 gap-6 '>
+        <div
+          className='p-2 border border-solid border-black rounded grid md:grid-cols-2 gap-6 '
+          id='michael'>
           <div className='order-2 sm:order-1 mt-4 md:mt-0 p-2'>
             <h3 className='font-bold text-lg'>Dr. Michael White</h3>
             <p className='text-sm text-slate-500'>(Endodontist)</p>

@@ -52,6 +52,7 @@ function TheHeader() {
         <nav className='hidden md:flex gap-6 items-center text-lg'>
           <Link
             href='/about'
+            aria-label='About us page link'
             className={
               pathName === '/about'
                 ? 'text-blue-600 font-bold'
@@ -61,6 +62,7 @@ function TheHeader() {
           </Link>
           <Link
             href='/services'
+            aria-label='Services page link'
             className={
               pathName === '/services'
                 ? 'text-blue-600 font-bold'
@@ -70,6 +72,7 @@ function TheHeader() {
           </Link>
           <Link
             href='/booking'
+            aria-label='Create a booking page link'
             className='p-2 rounded-full bg-blue-600 text-white hover:bg-blue-800 '>
             Book now
           </Link>
@@ -77,6 +80,7 @@ function TheHeader() {
             <>
               <Link
                 href='/admin/bookings'
+                aria-label='Admin bookings dashboard page link'
                 className={
                   pathName.startsWith('/admin')
                     ? 'text-blue-600 font-bold'
@@ -109,16 +113,19 @@ function TheHeader() {
           className='md:hidden p-4 bg-sky-50  mt-2 flex flex-col gap-2 text-center'>
           <Link
             href={'/about'}
+            aria-label='About us page link'
             className='border rounded p-2 border-blue-400 animate-link'>
             About us
           </Link>
           <Link
             href={'/services'}
+            aria-label='Services page link'
             className='border rounded p-2 border-blue-400 animate-link'>
             Services
           </Link>
           <Link
             href={'/booking'}
+            aria-label='Create a booking page link'
             className=' rounded p-2 bg-blue-600 text-white animate-link font-bold'>
             Book now
           </Link>
@@ -126,6 +133,7 @@ function TheHeader() {
             <>
               <Link
                 href={'/admin/bookings'}
+                aria-label='Admin bookings dashboard page link'
                 className='border rounded p-2 border-blue-400 animate-link'>
                 Admin
               </Link>

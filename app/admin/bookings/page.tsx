@@ -89,7 +89,7 @@ function Bookings() {
                 </th>
                 <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
                   <div className='flex flex-row items-center gap-4'>
-                    Status
+                    <label htmlFor='status'>Status</label>
                     <select
                       name='status'
                       id='status'
