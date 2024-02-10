@@ -27,6 +27,7 @@ function EditUserModal({
       if (res.ok) {
         onUserUpdate()
         setShowUser(false)
+        setPassword('')
       }
     } catch (error: any) {
       setError(error.message)

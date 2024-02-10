@@ -29,13 +29,11 @@ export async function PUT(req: Request) {
       if (!user) {
         throw new Error('User not found')
       }
-      const updateFields: Partial<UserType> = {}
-      if (name) updateFields.name = name
-      if (password && password !== '') updateFields.password = password
 
-      await User.findByIdAndUpdate({ _id }, updateFields, {
-        new: true,
-      })
+      if (name) user.name = name
+      if (password && password !== '') user.password = password
+
+      await user.save()
       return Response.json({ message: 'User updated' })
     } else {
       throw new Error('Unathorized')
