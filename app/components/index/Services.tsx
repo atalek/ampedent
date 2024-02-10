@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 function Services() {
   return (
     <section>
@@ -5,9 +7,11 @@ function Services() {
         <div className='mx-auto w-full max-w-3xl text-center'>
           <h2 className='text-3xl font-semibold md:text-5xl'>
             Make Every Step <br />
-            <span className="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/63915f9749aaab0572c48dae_Rectangle%2018.svg')] bg-cover bg-center bg-no-repeat px-4 text-white">
+            <Link
+              href='/services/#services'
+              className="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/63915f9749aaab0572c48dae_Rectangle%2018.svg')] bg-cover bg-center bg-no-repeat px-4 text-white">
               Patient - Centric
-            </span>
+            </Link>
           </h2>
           <div className='mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16'>
             <p className='text-[#636262]'>

@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ampedent
 
-## Getting Started
+![Landing page](https://res.cloudinary.com/dkofkuquf/image/upload/v1707530071/nuxtshop/lqnlwdzylzf5u2zgu2bo.png)
 
-First, run the development server:
+Ampedent is a full-featured dental office website built with **Next.js**,
+**Tailwind CSS**, **MongoDB**, and **Mongoose**. It boasts an intuitive
+appointment booking system, and a secure admin panel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Appointment Booking:** Users can easily book an appointment using our
+  intuitive booking system. All bookings are stored in MongoDB for easy
+  management.
+- **Admin Panel:** Manage appointments and other site content through a secure
+  admin panel.Navigate to /admin to login with your admin credentials.
+- **Authentication:** The site uses NextAuth for authentication. The admin panel
+  is accessible only to admins. A super admin can create other regular admin
+  users.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next.js**: A popular React framework for building dynamic and performant web
+  applications.
+- **Tailwind CSS**:A utility-first CSS framework for crafting tailored designs
+  with rapid efficiency.
+- **MongoDB**: A source-available cross-platform document-oriented database
+  program.
+- **Mongoose**: An Object Data Modeling (ODM) library that simplifies
+  interactions with MongoDB in Node.js applications.
+- **NextAuth**: A complete open source authentication solution for Next.js
+  applications.
 
-## Learn More
+## Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/Amphei/ampedent.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+2. **Navigate to the project directory.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   cd ampedent
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```
+
+3. **Install dependencies.**
+
+   ```bash
+   npm install
+
+   ```
+
+4. **Configure environment variables.**
+
+- Create a `.env` file in the root of the project.
+- Add the necessary environment variables for Stripe and Cloudinary.
+
+  ```env
+  # MongoDB
+  MONGODB_URI=your_mongodb_uri
+
+  # NextAuth
+  NEXTAUTH_URL='http://localhost:3000' for development
+  NEXTAUTH_SECRET=your nextauth secret
+
+
+  NODE_ENV='development'
+  ```
+
+5. **Create a superuser with the provided script.**
+
+   ```bash
+   node createuser.js
+
+   ```
+
+6. **Run the development server.**
+
+   ```bash
+   npm run dev
+
+   ```
+
+7. **Open your browser and visit http://localhost:3000 to view the website.**
+
+## Live Version
+
+[https://ampedent.vercel.app](https://ampedent.vercel.app)
+
+## Author
+
+Github [@Amphei](https://github.com/Amphei) <br> Linkedin:
+[@Aleksandar Atanasovski](https://www.linkedin.com/in/aleksandar-atanasovski-16b123263/)
+<br> Portfolio:
+[https://atal-portfolio.pages.dev/](https://atal-portfolio.pages.dev/)

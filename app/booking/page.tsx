@@ -10,7 +10,7 @@ import {
   formatTime,
   incrementTimeByOneHour,
 } from '@/lib/dateAndTimeUtils'
-import SuccessBox from '../components/SuccessBox'
+import SuccessBox from '../components/booking/SuccessBox'
 
 function Booking() {
   const [firstName, setFirstName] = useState('')
@@ -26,14 +26,15 @@ function Booking() {
 
   const now = new Date()
   let defaultDate = new Date()
-  if (now.getHours() >= 16) {
-    defaultDate.setDate(now.getDate() + 1)
 
-    if (defaultDate.getDay() === 0 || defaultDate.getDay() === 6) {
-      defaultDate.setDate(
-        defaultDate.getDate() + (defaultDate.getDay() === 6 ? 2 : 1),
-      )
-    }
+  if (now.getHours() >= 16 || (now.getHours() === 16 && now.getMinutes() > 0)) {
+    defaultDate.setDate(now.getDate() + 1)
+  }
+
+  if (defaultDate.getDay() === 0) {
+    defaultDate.setDate(defaultDate.getDate() + 1)
+  } else if (defaultDate.getDay() === 6) {
+    defaultDate.setDate(defaultDate.getDate() + 2)
   }
 
   const [availableTimes, setAvailableTimes] = useState<string[]>([])
@@ -104,6 +105,10 @@ function Booking() {
     }
   }
 
+  useEffect(() => {
+    document.title = 'Book now | AmpeDent'
+  }, [])
+
   return (
     <section className='max-w-3xl w-full min-h-lvh mx-auto flex items-center justify-center p-4'>
       <div>
@@ -118,9 +123,11 @@ function Booking() {
                 We look forward to seeing you on{' '}
                 {formatDate(selectedDate!.toString())} at{' '}
                 {formatTime(selectedTime)} -{' '}
-                {incrementTimeByOneHour(selectedTime)}. <br /> If you have any
-                questions or need to make changes, please contact us at
-                ampedent@example.com or call us at +1234567890.
+                {incrementTimeByOneHour(selectedTime)}. <br />
+                If you have any questions or need to make changes, please
+                contact us at <br />
+                <span className='font-bold'>ampedent@example.com</span> or call
+                us at <span className='font-bold'>+1234567890</span>
                 <br />
               </p>
             </div>
@@ -260,7 +267,7 @@ function Booking() {
                     {availableTimes.length > 0 &&
                       availableTimes.map((time: string) => (
                         <option value={time} key={time}>
-                          {formatTime(time)}
+                          {formatTime(time)} - {incrementTimeByOneHour(time)}
                         </option>
                       ))}
                   </select>

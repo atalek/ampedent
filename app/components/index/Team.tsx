@@ -15,9 +15,9 @@ function Team() {
         <p className='mx-auto mb-8 mt-4 max-w-lg text-center text-[#636262] md:mb-16'>
           Meet the skilled hands & kind hearts behind your healthy smile
         </p>
-        <ul className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           <Link
-            href='/about/#ourTeam'
+            href='/about/#ourteam'
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               height={208}
@@ -33,7 +33,7 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourTeam'
+            href='/about/#ourteam'
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc2}
@@ -49,7 +49,7 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourTeam'
+            href='/about/#ourteam'
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc4}
@@ -65,7 +65,7 @@ function Team() {
             </p>
           </Link>
           <Link
-            href='/about/#ourTeam'
+            href='/about/#ourteam'
             className='mx-auto flex max-w-xs flex-col items-center gap-4 px-8 py-6 text-center shadow-lg'>
             <Image
               src={doc3}
@@ -80,7 +80,7 @@ function Team() {
               (Endodontist)
             </p>
           </Link>
-        </ul>
+        </div>
       </div>
     </section>
   )

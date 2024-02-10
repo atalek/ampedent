@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import Bookings from './Icons/Bookings'
-import Users from './Icons/Users'
-import CreateUser from './Icons/CreateUser'
+import Bookings from '../Icons/Bookings'
+import Users from '../Icons/Users'
+import CreateUser from '../Icons/CreateUser'
 import { useEffect, useState } from 'react'
 
 export default function NavLinks() {

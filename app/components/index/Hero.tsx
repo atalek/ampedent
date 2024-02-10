@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import HeroContainer from './HeroContainer'
 import hero from '@/public/hero.webp'
+import HeroContainer from '../layout/HeroContainer'
 
 function Hero() {
   return (

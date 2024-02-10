@@ -1,8 +1,7 @@
 import { allTimes } from '@/data/times'
 import dbConnect from '@/lib/dbConnect'
+import { isSuperAdmin } from '@/lib/isSuperAdmin'
 import Booking, { BookingType } from '@/models/Booking'
-import { isSuperAdmin } from '../auth/[...nextauth]/route'
-import { el } from 'date-fns/locale'
 
 export async function GET(req: Request) {
   try {
@@ -104,7 +103,6 @@ export async function PUT(req: Request) {
           { status: 'completed' },
           { new: true },
         )
-        console.log(booking.status)
         return Response.json({ message: 'Booking updated', booking: booking })
       }
     } else {

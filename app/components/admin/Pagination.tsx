@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import AlignLeft from './Icons/AlignLeft'
-import AlignRight from './Icons/AlignRight'
+import AlignLeft from '../Icons/AlignLeft'
+import AlignRight from '../Icons/AlignRight'
 
 function Pagination({
   page,
@@ -73,7 +73,7 @@ function Pagination({
             <button
               disabled={page === 1}
               onClick={() => setPage(prevPage => Math.min(prevPage - 1, pages))}
-              className='relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed'>
+              className='relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed disabled:bg-gray-300'>
               <span className='sr-only'>Previous</span>
               <AlignLeft aria-hidden='true' />
             </button>
@@ -95,7 +95,7 @@ function Pagination({
             <button
               disabled={page === pages}
               onClick={() => setPage(prevPage => Math.min(prevPage + 1, pages))}
-              className='relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed'>
+              className='relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 disabled:cursor-not-allowed disabled:bg-gray-300'>
               <span className='sr-only'>Next</span>
               <AlignRight aria-hidden='true' />
             </button>

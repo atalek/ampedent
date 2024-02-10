@@ -1,36 +1,19 @@
 'use client'
 
-import { signIn } from 'next-auth/react'
-import { FormEvent, useState } from 'react'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { FormEvent, useEffect, useState } from 'react'
 
 function Admin() {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-
-  // function handleLogin(e: FormEvent<HTMLFormElement>) {
-  //   e.preventDefault()
-  //   try {
-  //     if (!name || !password) return
-  //     setIsLoading(true)
-  //     const body = { name, password }
-  //     fetch('/api/auth/login', {
-  //       method: 'POST',
-  //       body: JSON.stringify(body),
-  //       headers: { 'Content-Type': 'application/json' },
-  //     })
-  //     setIsLoading(false)
-  //   } catch (err: any) {
-  //     setIsLoading(false)
-  //     setError(err.message)
-  //     console.log(err)
-  //   }
-  // }
+  const { status } = useSession()
+  const router = useRouter()
 
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log('clicked?')
     try {
       if (!name || !password) return
       setIsLoading(true)
@@ -43,8 +26,15 @@ function Admin() {
     } catch (err: any) {
       setIsLoading(false)
       setError(err.message)
-      console.log(err)
     }
+  }
+
+  useEffect(() => {
+    document.title = 'Admin Login | AmpeDent'
+  }, [])
+
+  if (status === 'authenticated') {
+    router.push('/admin/bookings')
   }
 
   return (

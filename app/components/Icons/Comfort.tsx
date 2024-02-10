@@ -60,7 +60,7 @@ function Comfort() {
           width='278'
           height='326'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -136,7 +136,7 @@ function Comfort() {
           width='149'
           height='149'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -156,7 +156,7 @@ function Comfort() {
           width='149'
           height='149'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -176,7 +176,7 @@ function Comfort() {
           width='67.5018'
           height='34.5'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -216,7 +216,7 @@ function Comfort() {
           width='67.5018'
           height='34.5'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feBlend
             mode='normal'
@@ -256,7 +256,7 @@ function Comfort() {
           width='194.552'
           height='127.167'
           filterUnits='userSpaceOnUse'
-          colorInterpolation-filters='sRGB'>
+          colorInterpolationFilters='sRGB'>
           <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'

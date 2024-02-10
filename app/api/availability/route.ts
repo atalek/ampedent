@@ -1,8 +1,10 @@
 import { allTimes } from '@/data/times'
 import dbConnect from '@/lib/dbConnect'
 import Booking from '@/models/Booking'
+import { unstable_noStore as noStore } from 'next/cache'
 
 export async function GET(req: Request) {
+  noStore()
   try {
     const url = new URL(req.url)
     const date = url.searchParams.get('date')

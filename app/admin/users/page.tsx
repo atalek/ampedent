@@ -1,16 +1,22 @@
 'use client'
 
-import DeleteButton from '@/app/components/DeleteButton'
-import EditUserModal from '@/app/components/EditUserModal'
-import { UserType } from '@/models/User'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+
+import Spinner from '@/app/components/Spinner'
+import DeleteButton from '@/app/components/admin/DeleteButton'
+import EditUserModal from '@/app/components/admin/EditUserModal'
+import { UserType } from '@/models/User'
 
 function UserList() {
   const [users, setUsers] = useState<UserType[]>([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState('')
   const [refreshKey, setRefreshKey] = useState(0)
   const triggerRefresh = () => setRefreshKey(refreshKey + 1)
+  const { status } = useSession()
+  const router = useRouter()
 
   useEffect(() => {
     async function fetchUsers() {
@@ -42,8 +48,18 @@ function UserList() {
       setError(error.message)
     }
   }
+
+  if (status === 'unauthenticated') {
+    router.push('/')
+  }
+
+  useEffect(() => {
+    document.title = 'Users | Admin | AmpeDent'
+  }, [])
   return (
     <>
+      {isLoading && <Spinner />}
+      {error && <p className='text-red-600 text-center '>{error}</p>}
       <section className='relative w-full overflow-auto'>
         <table className='w-full caption-bottom text-sm'>
           <thead>

@@ -18,6 +18,8 @@ function ServicesAbout() {
             </p>
           </div>
           <Image
+            height={1000}
+            width={1000}
             src={services2}
             alt='image of patient smiling'
             className='object-contain rounded'

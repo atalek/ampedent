@@ -15,7 +15,7 @@ function Checkmark() {
 
       <g
         fill='none'
-        fill-rule='evenodd'
+        fillRule='evenodd'
         id='Page-1'
         stroke='none'
         strokeWidth='1'>

@@ -1,6 +1,6 @@
 import dbConnect from '@/lib/dbConnect'
+import { isSuperAdmin } from '@/lib/isSuperAdmin'
 import User from '@/models/User'
-import { isSuperAdmin } from '../../auth/[...nextauth]/route'
 
 export async function POST(req: Request) {
   try {

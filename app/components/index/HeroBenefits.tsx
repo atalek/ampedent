@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import Science from './Icons/Science'
-import RoundGraphic from './Icons/RoundGraphic'
-import Checkmark from './Icons/Checkmark'
-import Comfort from './Icons/Comfort'
-import Confidence from './Icons/Confidence'
+import Science from '../Icons/Science'
+import RoundGraphic from '../Icons/RoundGraphic'
+import Checkmark from '../Icons/Checkmark'
+import Comfort from '../Icons/Comfort'
+import Confidence from '../Icons/Confidence'
 
 function Yep() {
   return (

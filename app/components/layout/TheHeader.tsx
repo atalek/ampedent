@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logo from '@/public/ampedent.webp'
 import { useEffect, useState } from 'react'
-import UpArrow from './Icons/UpArrow'
+import UpArrow from '../Icons/UpArrow'
 import { usePathname } from 'next/navigation'
 import { signOut, useSession } from 'next-auth/react'
 

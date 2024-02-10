@@ -45,7 +45,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16 rounded-full'
               />
               <div className='flex flex-col'>
-                <h5 className='font-bold'>Alan Kaizer</h5>
+                <h3 className='font-bold'>Alan Kaizer</h3>
               </div>
             </div>
           </li>
@@ -88,7 +88,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16'
               />
               <div className='flex flex-col'>
-                <h5 className='font-bold'>Woodland Joseph</h5>
+                <h3 className='font-bold'>Woodland Joseph</h3>
               </div>
             </div>
           </li>
@@ -130,7 +130,7 @@ function Testemonials() {
                 className='mr-4 h-16 w-16 rounded-full'
               />
               <div className='flex flex-col'>
-                <h5 className='text-base font-bold'>Sebastian Fors</h5>
+                <h3 className='text-base font-bold'>Sebastian Fors</h3>
               </div>
             </div>
           </li>

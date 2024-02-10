@@ -9,7 +9,7 @@ function OurTeamAbout() {
   return (
     <section
       className='mx-auto w-full max-w-[1400px] px-5 py-16 md:px-10 md:py-24 lg:py-32'
-      id='ourTeam'>
+      id='ourteam'>
       <h2 className='text-center text-3xl font-bold md:text-5xl'>
         Our Team Members
       </h2>
@@ -22,8 +22,8 @@ function OurTeamAbout() {
           <Image
             src={doc1}
             alt='Picture of Dr. Daniel Lee '
-            height={500}
-            width={500}
+            height={1000}
+            width={1000}
           />
           <div className='mt-4 md:mt-0 p-2'>
             <h3 className='font-bold text-lg'>Dr. Daniel Lee</h3>
@@ -57,8 +57,8 @@ function OurTeamAbout() {
           <Image
             src={doc2}
             alt='Picture of Dr.Sarah Green '
-            height={500}
-            width={500}
+            height={1000}
+            width={1000}
             className='order-1 sm:order-2'
           />
         </div>
@@ -68,8 +68,8 @@ function OurTeamAbout() {
           <Image
             src={doc4}
             alt='Picture of Dr. Emily Rose '
-            height={500}
-            width={500}
+            height={1000}
+            width={1000}
           />
           <div className='mt-4 md:mt-0 p-2'>
             <h3 className='font-bold text-lg'>Dr. Emily Rose</h3>
@@ -102,8 +102,8 @@ function OurTeamAbout() {
           <Image
             src={doc3}
             alt='Picture of Dr. Michael White'
-            height={500}
-            width={500}
+            height={1000}
+            width={1000}
             className='order-1 sm:order-2'
           />
         </div>

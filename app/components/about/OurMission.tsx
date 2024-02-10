@@ -8,7 +8,7 @@ function OurMission() {
         <h2 className='mb-8 text-3xl font-bold md:text-5xl lg:mb-14'>
           Meet AmpeDent: Where Smiles Shine Brighter
         </h2>
-        <p className='mb-8  text-sm text-[#808080] sm:text-base lg:mb-24'>
+        <p className='mb-8  text-sm text-slate-800 sm:text-base lg:mb-24'>
           Tired of the dentist blues? Ready to experience dental care that's
           actually pleasant? Welcome to AmpeDent, your friendly neighborhood
           dental haven! We're here to change the way you think about going to
@@ -17,13 +17,15 @@ function OurMission() {
         </p>
         <div className='grid gap-10 lg:grid-cols-2 lg:gap-12'>
           <Image
+            height={1000}
+            width={1000}
             src={about2}
             alt='image of patient smiling'
             className='object-contain rounded'
           />
           <div className='flex flex-col gap-5 rounded-2xl border border-solid border-black p-10 sm:p-20'>
             <h2 className='text-3xl font-bold md:text-5xl'>Our Mission</h2>
-            <p className='text-sm text-[#808080] sm:text-base'>
+            <p className='text-sm text-slate-800 sm:text-base'>
               At AmpeDent, our mission is to provide exceptional dental care in
               a comfortable and friendly environment. We are committed to
               empowering our patients through education about oral health,

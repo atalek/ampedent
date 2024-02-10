@@ -1,6 +1,6 @@
 import dbConnect from '@/lib/dbConnect'
+import { isSuperAdmin } from '@/lib/isSuperAdmin'
 import Booking from '@/models/Booking'
-import { isSuperAdmin } from '../../auth/[...nextauth]/route'
 
 export async function PUT(req: Request) {
   try {

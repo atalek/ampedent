@@ -7,14 +7,17 @@ import {
 } from '@/lib/dateAndTimeUtils'
 import { BookingType } from '@/models/Booking'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
+import Spinner from '@/app/components/Spinner'
 
 function IndividualBooking({ params }: { params: { id: string } }) {
   const [booking, setBooking] = useState<BookingType>()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
+  const { status } = useSession()
 
   useEffect(() => {
     async function fetchBooking() {
@@ -68,8 +71,8 @@ function IndividualBooking({ params }: { params: { id: string } }) {
     }
   }
 
-  if (isLoading) {
-    return <h2 className='text-center text-4xl'>Loading...</h2>
+  if (status === 'unauthenticated') {
+    router.push('/')
   }
 
   return (
@@ -86,7 +89,7 @@ function IndividualBooking({ params }: { params: { id: string } }) {
               <h1 className='text-center mb-8 text-3xl font-bold md:text-5xl'>
                 Booking : {booking._id.toString()}
               </h1>
-
+              {isLoading && <Spinner />}
               {error && <p className='text-red-600 text-center '>{error}</p>}
             </div>
             <form className='mx-auto'>

@@ -1,14 +1,21 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { FormEvent, useState } from 'react'
+import { useSession } from 'next-auth/react'
+
+import { FormEvent, useEffect, useState } from 'react'
 
 function CreateUser() {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const { status } = useSession()
   const router = useRouter()
+
+  useEffect(() => {
+    document.title = 'Create user | Admin | AmpeDent'
+  }, [])
 
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,8 +35,10 @@ function CreateUser() {
     } catch (err: any) {
       setIsLoading(false)
       setError(err.message)
-      console.log(err)
     }
+  }
+  if (status === 'unauthenticated') {
+    router.push('/')
   }
   return (
     <section>

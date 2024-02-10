@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Github from './Icons/Github'
+import Github from '../Icons/Github'
 import { useSession } from 'next-auth/react'
 
 function TheFooter() {
@@ -76,10 +76,10 @@ function TheFooter() {
           </div>
           <div className='max-[991px]:flex-none '>
             <Link
-              href='https://github.com/Amphei'
+              href='https://github.com/Amphei/ampedent'
               target='_blank'
               className='text-slate-600   flex flex-row items-center gap-1 '>
-              © {currentYear} ampeDent - Made by Amphei <Github />
+              © {currentYear} AmpeDent - Made by Amphei <Github />
             </Link>
           </div>
         </div>
