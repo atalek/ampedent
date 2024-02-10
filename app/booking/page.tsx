@@ -160,7 +160,6 @@ function Booking() {
                     disabled={isLoading}
                     type='text'
                     id='name'
-                    autoFocus
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                   />
@@ -264,12 +263,15 @@ function Booking() {
                     disabled={isLoading}
                     id='time'
                     className='appearance-none bg-white'>
-                    {availableTimes.length > 0 &&
+                    {availableTimes.length > 0 ? (
                       availableTimes.map((time: string) => (
                         <option value={time} key={time}>
                           {formatTime(time)} - {incrementTimeByOneHour(time)}
                         </option>
-                      ))}
+                      ))
+                    ) : (
+                      <option disabled>No time available for this date</option>
+                    )}
                   </select>
                 </div>
               </div>

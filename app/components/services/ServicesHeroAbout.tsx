@@ -3,7 +3,7 @@ import Link from 'next/link'
 function ServicesHeroAbout() {
   return (
     <div className='mx-auto  w-full max-w-7xl text-center mt-32'>
-      <h1 className='mb-4 text-5xl font-bold md:text-7xl  text-center'>
+      <h1 className='mb-4 text-4xl font-bold md:text-7xl  text-center'>
         Building lifetime relationships through positive experiences
       </h1>
 

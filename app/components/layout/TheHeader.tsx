@@ -43,6 +43,7 @@ function TheHeader() {
       }`}>
       <div className='mx-auto flex flex-row items-center justify-between p-4  max-w-[1400px]'>
         <Link
+          onClick={() => setIsOpen(false)}
           href='/'
           className=' flex gap-2 items-center text-xl font-bold md:text-3xl text-blue-600  hover:text-blue-800'>
           <Image src={logo} height={96} width={96} alt='ampeDent logo' />
