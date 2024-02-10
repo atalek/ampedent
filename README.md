@@ -30,6 +30,10 @@ appointment booking system, and a secure admin panel.
 - **NextAuth**: A complete open source authentication solution for Next.js
   applications.
 
+
+	
+![Admin panel](https://res.cloudinary.com/dkofkuquf/image/upload/v1707585171/nuxtshop/go7j387zbdkslzrayolk.png)
+
 ## Setup
 
 1. **Clone the repository.**
