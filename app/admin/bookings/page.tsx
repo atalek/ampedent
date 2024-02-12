@@ -136,8 +136,8 @@ function Bookings() {
                     {formatDate(booking.date.toString())}
                   </td>
                   <td className='p-4 align-middle'>
-                    <button className='btn '>
-                      <Link href={`/admin/bookings/${booking._id.toString()}`}>
+                    <button>
+                      <Link href={`/admin/bookings/${booking._id.toString()}`} className="btn">
                         Show details
                       </Link>
                     </button>
