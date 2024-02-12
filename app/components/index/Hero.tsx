@@ -11,7 +11,7 @@ function Hero() {
           Reconnect with your smile
         </h1>
         <h2 className='mx-auto max-w-lg  text-slate-800 text-md sm:text-xl mb-4'>
-          ampeDent - A new approach to dental comfort
+          AmpeDent - A new approach to dental comfort
         </h2>
         <h2 className='mx-auto mb-5 max-w-lg  text-slate-800 text-md sm:text-xl '>
           Make your perfect smile even better
