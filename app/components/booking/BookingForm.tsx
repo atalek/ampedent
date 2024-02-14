@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, useEffect, useRef, useState } from 'react'
 
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -24,6 +24,7 @@ function BookingForm() {
   const [error, setError] = useState('')
   const [isDisabled, setIsDisabled] = useState(true)
   const [created, setCreated] = useState(false)
+  const successBoxRef = useRef<HTMLDivElement | null>(null)
 
   const now = new Date()
   let defaultDate = new Date()
@@ -42,6 +43,28 @@ function BookingForm() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(defaultDate)
   const [selectedTime, setSelectedTime] = useState('')
 
+  function filterDates(date: Date) {
+    const day = date.getDay()
+    if (day === 0 || day === 6) {
+      return false
+    }
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    if (date < today) {
+      return false
+    }
+    const now = new Date()
+    if (
+      date.getDate() === now.getDate() &&
+      date.getMonth() === now.getMonth() &&
+      date.getFullYear() === now.getFullYear() &&
+      now.getHours() >= 16
+    ) {
+      return false
+    }
+    return true
+  }
+
   const isValidEmail = (email: string) => /\S+@\S+\.\S+/.test(email)
   const isValidPhone = (phone: string) =>
     phone.length >= 8 &&
@@ -49,7 +72,9 @@ function BookingForm() {
   const isValidName = (name: string) => name.length >= 3
 
   useEffect(() => {
-    const isEmpty = [firstName, lastName, email, phone].some(x => x === '')
+    const isEmpty = [firstName, lastName, email, phone, selectedTime].some(
+      x => x === '',
+    )
     setIsDisabled(
       isEmpty ||
         !isValidName(firstName) ||
@@ -105,11 +130,18 @@ function BookingForm() {
       setIsLoading(false)
     }
   }
+
+  useEffect(() => {
+    if (created && successBoxRef.current) {
+      successBoxRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [created])
+
   return (
     <section className='max-w-3xl w-full min-h-lvh mx-auto flex items-center justify-center p-4'>
       <div>
         {created && (
-          <SuccessBox>
+          <SuccessBox ref={successBoxRef}>
             <div className='my-8'>
               <h1 className='text-center mb-8 text-3xl font-bold md:text-5xl'>
                 Appointment created
@@ -216,25 +248,7 @@ function BookingForm() {
                     selected={selectedDate}
                     onChange={date => setSelectedDate(date)}
                     dateFormat='dd MMMM yyyy'
-                    filterDate={date => {
-                      const day = date.getDay()
-                      if (day === 0 || day === 6) {
-                        return false
-                      }
-                      const today = new Date()
-                      today.setHours(0, 0, 0, 0)
-                      if (date < today) {
-                        return false
-                      }
-                      const now = new Date()
-                      if (
-                        date.getDate() === now.getDate() &&
-                        now.getHours() >= 16
-                      ) {
-                        return false
-                      }
-                      return true
-                    }}
+                    filterDate={filterDates}
                   />
                 </div>
                 <div className='flex flex-col'>
