@@ -76,7 +76,7 @@ function IndividualBooking({ params }: { params: { id: string } }) {
   }
 
   return (
-    <section>
+    <section className=''>
       <Link
         href='/admin/bookings'
         className='p-3 border rounded hover:border-black'>
@@ -84,15 +84,15 @@ function IndividualBooking({ params }: { params: { id: string } }) {
       </Link>
       {booking && (
         <section className='max-w-3xl w-full mx-auto flex items-center justify-center p-4'>
-          <div>
+          <div className='w-full'>
             <div className='mb-1'>
-              <h1 className='text-center mb-8 text-3xl font-bold md:text-5xl'>
+              <h1 className=' text-center mb-8 text-wrap text-2xl font-bold md:text-5xl'>
                 Booking : {booking._id.toString()}
               </h1>
               {isLoading && <Spinner />}
               {error && <p className='text-red-600 text-center '>{error}</p>}
             </div>
-            <form className='mx-auto'>
+            <form className='mx-auto flex flex-col'>
               <div className='grid md:grid-cols-2 gap-4 items-center'>
                 <div>
                   <label htmlFor='firstName'>First name</label>
@@ -176,20 +176,20 @@ function IndividualBooking({ params }: { params: { id: string } }) {
                 <div className='flex md:flex-row flex-col items-center justify-between gap-4'>
                   <button
                     type='button'
-                    className='rounded px-6 py-3 text-center font-semibold text-white bg-blue-600 hover:bg-blue-800'>
+                    className='rounded w-full md:max-w-[100px] px-6 py-3 text-center font-semibold text-white bg-blue-600 hover:bg-blue-800'>
                     Notify
                   </button>
-                  <div className='flex items-center gap-4'>
+                  <div className='flex w-full md:flex-row flex-col items-center gap-4'>
                     <button
                       onClick={cancelBooking}
                       type='button'
-                      className='rounded px-6 py-3 text-center font-semibold text-white bg-red-500 hover:bg-red-800'>
-                      Cancel
+                      className='rounded w-full md:max-w-[200px] whitespace-nowrap px-6 py-3 text-center font-semibold text-white bg-red-500 hover:bg-red-800'>
+                      Cancel appointment
                     </button>
                     <button
                       onClick={completeBooking}
                       type='button'
-                      className='rounded px-6 py-3 text-center font-semibold text-white bg-green-600 hover:bg-green-800'>
+                      className='rounded w-full md:max-w-[200px] px-6 py-3 text-center font-semibold text-white bg-green-600 hover:bg-green-800'>
                       Mark as completed
                     </button>
                   </div>

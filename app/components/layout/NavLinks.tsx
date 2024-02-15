@@ -50,7 +50,8 @@ export default function NavLinks() {
                 ? 'bg-sky-100 text-blue-600'
                 : ''
             }`}>
-            <CreateUser /> Create new user
+            <CreateUser /> Create{' '}
+            <span className='md:block hidden'> new user</span>
           </Link>
         </>
       )}

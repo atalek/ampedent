@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import NavLinks from './NavLinks'
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 
 function SideNav() {
