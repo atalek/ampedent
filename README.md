@@ -65,7 +65,7 @@ appointment booking system, and a secure admin panel.
   MONGODB_URI=your_mongodb_uri
 
   # NextAuth
-  NEXTAUTH_URL='http://localhost:3000' for development
+  NEXTAUTH_URL=http://localhost:3000 for development
   NEXTAUTH_SECRET=your nextauth secret
 
 
