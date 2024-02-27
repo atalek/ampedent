@@ -52,7 +52,7 @@ function Yep() {
         <Link
           href='/about#mission'
           aria-label='Learn about our mission and values'
-          className='mx-auto mt-16 inline-block rounded-md bg-blue-600 hover:bg-blue-400 px-8 py-4 text-center font-semibold text-white'>
+          className='mx-auto mt-16 inline-block rounded-md bg-blue-800 hover:bg-blue-600 px-8 py-4 text-center font-semibold text-white'>
           <span aria-hidden='true'>Learn More</span>
           <span className='sr-only'>About Our Mission</span>
         </Link>
