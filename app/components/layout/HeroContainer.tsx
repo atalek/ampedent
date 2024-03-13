@@ -14,7 +14,7 @@ function HeroContainer({
         src={backgroundImage}
         alt={backgroundImage}
         objectFit='cover'
-        loading='lazy'
+        loading='eager'
         fill
       />
       <div className='z-40'>{children}</div>
