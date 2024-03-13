@@ -4,8 +4,8 @@ import services from '@/public/services.webp'
 import BookVisit from '../components/layout/BookVisit'
 import ServicesAbout from '../components/services/ServicesAbout'
 import OurServices from '../components/services/OurServices'
-import ServicesHeroAbout from '../components/services/ServicesHeroAbout'
 import { Metadata } from 'next'
+import HeroHeaders from '../components/layout/HeroHeaders'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -15,7 +15,7 @@ function Services() {
   return (
     <>
       <HeroContainer backgroundImage={services.src}>
-        <ServicesHeroAbout />
+        <HeroHeaders />
       </HeroContainer>
       <ServicesAbout />
       <OurServices />

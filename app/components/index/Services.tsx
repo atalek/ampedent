@@ -27,6 +27,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/318498/tooth-shield.svg'
                 alt='preventative care '
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>
@@ -44,6 +45,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/382221/dental-implant-health-healthcare-medical-medicine-pharmacy.svg'
                 alt='restorative care '
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>
@@ -60,6 +62,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/318582/tooth-clean.svg'
                 alt='cosmetic procedures'
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>
@@ -75,6 +78,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/100660/braces.svg'
                 alt='teeth braces'
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>
@@ -90,6 +94,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/148450/teeth.svg'
                 alt='periodontal care'
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>
@@ -105,6 +110,7 @@ function Services() {
               <img
                 src='https://www.svgrepo.com/show/318572/tooth-health.svg'
                 alt='emergency dental care '
+                loading='lazy'
                 className='relative z-10 inline-block h-8'
               />
               <div className='absolute z-0 h-8 w-8 rounded-full border border-[#c0d1ff] bg-[#c0d1ff]'></div>

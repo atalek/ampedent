@@ -23,6 +23,8 @@ function TheFooter() {
                 src='https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94bb99e6cf78_MapPin.svg'
                 alt=''
                 className='inline-block mr-3'
+                width={24}
+                height={24}
               />
               <p className='text-slate-600 max-[479px]:text-sm'>
                 123 Main St, Anytown, CA 90210, USA
@@ -33,6 +35,8 @@ function TheFooter() {
                 src='https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a944119e6cf76_EnvelopeSimple-2.svg'
                 alt='email icon'
                 className='inline-block mr-3'
+                width={24}
+                height={24}
               />
               <p className='text-slate-600 max-[479px]:text-sm'>
                 ampedent@example.com
@@ -42,7 +46,9 @@ function TheFooter() {
               <img
                 src='https://www.svgrepo.com/show/79112/telephone.svg'
                 alt='telephone icon'
-                className='inline-block mr-3 h-5 w-5'
+                className='inline-block mr-3 '
+                width={24}
+                height={24}
               />
               <p className='text-slate-600 max-[479px]:text-sm'>+1234567890</p>
             </div>

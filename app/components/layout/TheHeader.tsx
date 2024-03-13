@@ -46,7 +46,7 @@ function TheHeader() {
           onClick={() => setIsOpen(false)}
           href='/'
           className=' flex gap-2 items-center text-xl font-bold md:text-3xl text-blue-600  hover:text-blue-800'>
-          <Image src={logo} height={96} width={96} alt='ampeDent logo' />
+          <Image src={logo} height={96} width={74} alt='ampeDent logo' />
           AmpeDent
         </Link>
         <nav className='hidden md:flex gap-6 items-center text-lg'>

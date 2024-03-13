@@ -1,3 +1,8 @@
+import alk from '@/public/alankaizer.webp'
+import forsen from '@/public/forsen.webp'
+import woodland from '@/public/woodland.webp'
+import Image from 'next/image'
+
 function Testemonials() {
   return (
     <section className=''>
@@ -39,10 +44,12 @@ function Testemonials() {
               teeth. Best dentist ever!
             </p>
             <div className='flex'>
-              <img
-                src='https://cdn.frankerfacez.com/emoticon/303587/4'
-                alt=''
-                className='mr-4 h-16 w-16 rounded-full'
+              <Image
+                src={alk}
+                alt='Alan Kaizer'
+                className='mr-4 rounded-full'
+                height={64}
+                width={64}
               />
               <div className='flex flex-col'>
                 <h3 className='font-bold'>Alan Kaizer</h3>
@@ -82,10 +89,12 @@ function Testemonials() {
               recommend for pediatric care!
             </p>
             <div className='flex'>
-              <img
-                src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6358cb5e3ea08ab4c244194a_Ellipse%205-4.png'
-                alt=''
-                className='mr-4 h-16 w-16'
+              <Image
+                src={woodland}
+                alt='Woodland Joseph'
+                className='mr-4 '
+                height={64}
+                width={64}
               />
               <div className='flex flex-col'>
                 <h3 className='font-bold'>Woodland Joseph</h3>
@@ -124,10 +133,12 @@ function Testemonials() {
               Emergency root canal was painless. Dr. White is a lifesaver!
             </p>
             <div className='flex'>
-              <img
-                src='https://cdn.secta.ai/tmp/marko-headshot.jpeg'
-                alt=''
-                className='mr-4 h-16 w-16 rounded-full'
+              <Image
+                src={forsen}
+                alt='Sebastian Fors'
+                className='mr-4 rounded-full'
+                height={64}
+                width={64}
               />
               <div className='flex flex-col'>
                 <h3 className='text-base font-bold'>Sebastian Fors</h3>

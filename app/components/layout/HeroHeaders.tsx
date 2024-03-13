@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-function ServicesHeroAbout() {
+function HeroHeaders() {
   return (
     <div className='mx-auto  w-full max-w-7xl text-center mt-32'>
       <h1 className='mb-4 text-4xl font-bold md:text-7xl  text-center'>
@@ -17,4 +17,4 @@ function ServicesHeroAbout() {
     </div>
   )
 }
-export default ServicesHeroAbout
+export default HeroHeaders
