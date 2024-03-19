@@ -38,7 +38,7 @@ function TheHeader() {
 
   return (
     <header
-      className={`w-full z-50 sticky top-0 bg-sky-50 ${
+      className={`w-full z-50 sticky top-0 bg-sky-50  ${
         y > 0 ? 'border-b border-blue-400' : ''
       }`}>
       <div className='mx-auto flex flex-row items-center justify-between p-4  max-w-[1400px]'>
@@ -46,7 +46,13 @@ function TheHeader() {
           onClick={() => setIsOpen(false)}
           href='/'
           className=' flex gap-2 items-center text-xl font-bold md:text-3xl text-blue-600  hover:text-blue-800'>
-          <Image src={logo} height={96} width={74} alt='ampeDent logo' />
+          <Image
+            src={logo}
+            priority
+            height={96}
+            width={75}
+            alt='ampeDent logo'
+          />
           AmpeDent
         </Link>
         <nav className='hidden md:flex gap-6 items-center text-lg'>

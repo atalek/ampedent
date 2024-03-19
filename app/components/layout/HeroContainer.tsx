@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 function HeroContainer({
   backgroundImage,
   children,
@@ -6,14 +8,16 @@ function HeroContainer({
   children: React.ReactNode
 }) {
   return (
-    <section
-      className='hero-container'
-      style={
-        {
-          '--background-image': `url(${backgroundImage})`,
-        } as React.CSSProperties
-      }>
-      {children}
+    <section className='hero-container'>
+      <Image
+        priority
+        className='object-cover opacity-70'
+        src={backgroundImage}
+        alt={backgroundImage}
+        loading='eager'
+        fill
+      />
+      <div className='z-40'>{children}</div>
     </section>
   )
 }

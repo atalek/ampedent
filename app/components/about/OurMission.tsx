@@ -17,6 +17,7 @@ function OurMission() {
         </p>
         <div className='grid gap-10 lg:grid-cols-2 lg:gap-12'>
           <Image
+            placeholder='blur'
             height={1000}
             width={1000}
             src={about2}

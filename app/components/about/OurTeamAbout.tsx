@@ -20,6 +20,7 @@ function OurTeamAbout() {
           className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '
           id='daniel'>
           <Image
+            placeholder='blur'
             src={doc1}
             alt='Picture of Dr. Daniel Lee '
             height={1000}
@@ -57,6 +58,7 @@ function OurTeamAbout() {
           </div>
 
           <Image
+            placeholder='blur'
             src={doc2}
             alt='Picture of Dr.Sarah Green '
             height={1000}
@@ -70,6 +72,7 @@ function OurTeamAbout() {
           className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '
           id='emily'>
           <Image
+            placeholder='blur'
             src={doc4}
             alt='Picture of Dr. Emily Rose '
             height={1000}
@@ -106,6 +109,7 @@ function OurTeamAbout() {
             </p>
           </div>
           <Image
+            placeholder='blur'
             src={doc3}
             alt='Picture of Dr. Michael White'
             height={1000}

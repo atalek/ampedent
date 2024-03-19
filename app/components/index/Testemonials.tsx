@@ -16,27 +16,37 @@ function Testemonials() {
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
             </div>
             <p className='text-[#647084]'>
@@ -45,6 +55,7 @@ function Testemonials() {
             </p>
             <div className='flex'>
               <Image
+                placeholder='blur'
                 src={alk}
                 alt='Alan Kaizer'
                 className='mr-4 rounded-full'
@@ -61,27 +72,37 @@ function Testemonials() {
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
             </div>
             <p className='text-[#647084]'>
@@ -90,6 +111,7 @@ function Testemonials() {
             </p>
             <div className='flex'>
               <Image
+                placeholder='blur'
                 src={woodland}
                 alt='Woodland Joseph'
                 className='mr-4 '
@@ -106,27 +128,37 @@ function Testemonials() {
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
               <img
                 src='https://assets.website-files.com/6357722e2a5f19121d37f84d/6357722e2a5f195bcf37f880_Vector.svg'
                 alt=''
-                className='mr-1.5 w-4'
+                className='mr-1.5'
+                height='16'
+                width='16'
               />
             </div>
             <p className='text-[#647084]'>
@@ -134,6 +166,7 @@ function Testemonials() {
             </p>
             <div className='flex'>
               <Image
+                placeholder='blur'
                 src={forsen}
                 alt='Sebastian Fors'
                 className='mr-4 rounded-full'
