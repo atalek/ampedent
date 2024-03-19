@@ -73,7 +73,7 @@ function Bookings() {
         <table className='w-full caption-bottom text-sm'>
           <thead>
             <tr className='border-b transition-colors hover:bg-muted/50 '>
-              <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground w-[100px]'>
+              <th className='h-12 px-4 text-left  align-middle font-medium text-muted-foreground w-[100px] whitespace-nowrap'>
                 Booking ID
               </th>
               <th className='h-12 px-4 text-left align-middle font-medium text-muted-foreground'>
@@ -137,7 +137,9 @@ function Bookings() {
                   </td>
                   <td className='p-4 align-middle'>
                     <button>
-                      <Link href={`/admin/bookings/${booking._id.toString()}`} className="btn">
+                      <Link
+                        href={`/admin/bookings/${booking._id.toString()}`}
+                        className='btn '>
                         Show details
                       </Link>
                     </button>

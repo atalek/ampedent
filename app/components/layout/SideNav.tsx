@@ -20,8 +20,8 @@ function SideNav() {
             <div className='w-32 text-white md:w-40'>
               <Image
                 alt='ampedent logo'
-                width={500}
-                height={500}
+                width={160}
+                height={124}
                 src={'/ampedent.webp'}
               />
             </div>
