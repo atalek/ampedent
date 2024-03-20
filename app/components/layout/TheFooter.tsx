@@ -9,7 +9,18 @@ function TheFooter() {
   const { status } = useSession()
 
   return (
-    <footer className='block'>
+    <footer className='block relative'>
+      <div className='wave'>
+        <svg
+          data-name='Layer 1'
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 1200 120'
+          preserveAspectRatio='none'>
+          <path
+            d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z'
+            className='shape-fill'></path>
+        </svg>
+      </div>
       <div className='py-16 md:py-24 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10'>
         <div className='flex-row flex justify-between max-[767px]:flex-col max-[767px]:items-start'>
           <div className='w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial max-[767px]:'>

@@ -1,4 +1,3 @@
-import { allTimes } from '@/data/times'
 import dbConnect from '@/lib/dbConnect'
 import { isSuperAdmin } from '@/lib/isSuperAdmin'
 import Booking, { BookingType } from '@/models/Booking'

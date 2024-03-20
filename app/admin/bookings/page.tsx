@@ -28,6 +28,10 @@ function Bookings() {
   const { status } = useSession()
 
   useEffect(() => {
+    setPage(1)
+  }, [debouncedSearchTerm])
+
+  useEffect(() => {
     async function fetchBookings() {
       try {
         setIsLoading(true)

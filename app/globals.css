@@ -146,3 +146,32 @@ button[type='submit']:disabled,
 .animate-link:nth-child(5) {
   animation-delay: 0.5s;
 }
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(149% + 1.3px);
+  height: 80px;
+}
+
+.wave .shape-fill {
+  fill: #276981;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .wave svg {
+    width: calc(149% + 1.3px);
+    height: 54px;
+  }
+}
