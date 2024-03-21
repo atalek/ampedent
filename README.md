@@ -37,7 +37,7 @@ appointment booking system, and a secure admin panel.
 1. **Clone the repository.**
 
    ```bash
-   git clone https://github.com/Amphei/ampedent.git
+   git clone https://github.com/atalek/ampedent.git
 
    ```
 
@@ -95,7 +95,6 @@ appointment booking system, and a secure admin panel.
 
 ## Author
 
-Github [@Amphei](https://github.com/Amphei) <br> Linkedin:
+Github [@atalek](https://github.com/atalek) <br> Linkedin:
 [@Aleksandar Atanasovski](https://www.linkedin.com/in/aleksandar-atanasovski-16b123263/)
-<br> Portfolio:
-[https://atal-portfolio.pages.dev/](https://atal-portfolio.pages.dev/)
+<br> Portfolio: [https://www.atalek.com/](https://www.atalek.com/)

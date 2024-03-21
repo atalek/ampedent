@@ -97,10 +97,10 @@ function TheFooter() {
           </div>
           <div className='max-[991px]:flex-none '>
             <Link
-              href='https://github.com/Amphei/ampedent'
+              href='https://github.com/atalek/ampedent'
               target='_blank'
               className='text-slate-600   flex flex-row items-center gap-1 '>
-              © {currentYear} AmpeDent - Made by Amphei <Github />
+              © {currentYear} AmpeDent - Made by atalek <Github />
             </Link>
           </div>
         </div>
