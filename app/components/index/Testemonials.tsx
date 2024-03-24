@@ -1,5 +1,6 @@
 import alk from '@/public/alankaizer.webp'
 import forsen from '@/public/forsen.webp'
+import forsen2 from '@/public/forsen2.webp'
 import woodland from '@/public/woodland.webp'
 import Image from 'next/image'
 
@@ -167,7 +168,7 @@ function Testemonials() {
             <div className='flex'>
               <Image
                 placeholder='blur'
-                src={forsen}
+                src={forsen2}
                 alt='Sebastian Fors'
                 className='mr-4 rounded-full'
                 height={64}
