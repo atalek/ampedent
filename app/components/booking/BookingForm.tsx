@@ -40,7 +40,9 @@ function BookingForm() {
   }
 
   const [availableTimes, setAvailableTimes] = useState<string[]>([])
-  const [selectedDate, setSelectedDate] = useState<Date | null>(defaultDate)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    () => defaultDate,
+  )
   const [selectedTime, setSelectedTime] = useState('')
 
   function filterDates(date: Date) {
@@ -99,9 +101,8 @@ function BookingForm() {
         setError(err.message)
       }
     }
-
     fetchAvailableTimes()
-  }, [selectedDate])
+  }, [selectedDate?.valueOf])
 
   function handleAppointment(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -123,6 +124,7 @@ function BookingForm() {
           'Content-Type': 'application/json',
         },
       }).then(() => {
+        setIsLoading(false)
         setCreated(true)
       })
     } catch (err: any) {

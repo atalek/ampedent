@@ -91,7 +91,7 @@ appointment booking system, and a secure admin panel.
 
 ## Live Version
 
-[https://ampedent.vercel.app](https://ampedent.vercel.app)
+[https://ampedent.atalek.com](https://ampedent.atalek.com)
 
 ## Author
 
