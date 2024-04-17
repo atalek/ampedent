@@ -15,7 +15,7 @@ function OurTeamAbout() {
         Meet the skilled hands & kind hearts behind your healthy smile
       </p>
 
-      <div className='grid md:grid-cols-2 grid- gap-6 items-stretch'>
+      <div className='grid md:grid-cols-2 grid- gap-6 items-stretch text-balance'>
         <div
           className='p-2 border border-solid border-black rounded md:grid grid-cols-2 gap-6 '
           id='daniel'>
@@ -30,7 +30,7 @@ function OurTeamAbout() {
             <h3 className='font-bold text-lg'>Dr. Daniel Lee</h3>
             <p className='text-sm text-slate-500'>(Dentist)</p>
 
-            <p className='text-sm text-slate-600 mt-4'>
+            <p className='text-sm text-slate-600 mt-4 '>
               Dr. Daniel Lee is an experienced dentist with over 20 years in the
               field. A graduate from the University of Dental Medicine, he is
               known for his gentle touch and commitment to patient health. He

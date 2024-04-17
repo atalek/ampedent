@@ -7,7 +7,7 @@ function OurServices() {
         Our Dental Services
       </h2>
 
-      <div className='grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 max-w-[1400px] w-full mx-auto md:justify-stretch my-32'>
+      <div className='grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-6 max-w-[1400px] w-full mx-auto md:justify-stretch my-32 text-balance'>
         <div className='bg-sky-50 p-8 border border-solid border-black rounded'>
           <h2 className='text-3xl font-bold'>Cosmetic & Elective</h2>
           <hr className='w-40 my-8 border-2 border-black' />

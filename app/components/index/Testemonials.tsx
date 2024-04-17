@@ -11,7 +11,7 @@ function Testemonials() {
         <h2 className='mb-8 text-center text-3xl font-bold md:mb-14 md:text-5xl'>
           What our clients are saying
         </h2>
-        <ul className='mb-6 grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:mb-16'>
+        <ul className='mb-6 grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:mb-16 text-balance'>
           <li className='grid gap-8 border border-solid border-[#dfdfdf] bg-white p-8 md:p-10'>
             <div className='flex'>
               <img

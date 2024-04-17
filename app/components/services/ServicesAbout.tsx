@@ -10,7 +10,7 @@ function ServicesAbout() {
             <h2 className='text-3xl font-bold md:text-5xl'>
               Love your general dental care
             </h2>
-            <p className='text-sm text-slate-600 sm:text-base'>
+            <p className='text-sm text-slate-600 sm:text-base text-balance'>
               We're thrilled to be your new home for exceptional dentistry.
               Visit us for a cleaning, general dental exam, and a bit of
               pampering. Plus, everything else you need to look and feel your

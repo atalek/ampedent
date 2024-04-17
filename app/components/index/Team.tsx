@@ -15,7 +15,7 @@ function Team() {
         <p className='mx-auto mb-8 mt-4 max-w-lg text-center text-[#636262] md:mb-16'>
           Meet the skilled hands & kind hearts behind your healthy smile
         </p>
-        <div className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
           <Link
             href='/about/#daniel'
             aria-label="Link to Dr. Daniel Lee's section on the about page"
